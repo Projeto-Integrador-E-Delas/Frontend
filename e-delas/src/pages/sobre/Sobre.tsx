@@ -1,7 +1,7 @@
 import React from 'react';
 import img from "../../assets/empowerment.jpeg"
 
-function SobreNos() {
+function Sobre() {
     return (
         <>
         
@@ -16,4 +16,4 @@ function SobreNos() {
         </div>
         </>
 )}
-export default SobreNos;
+export default Sobre;
