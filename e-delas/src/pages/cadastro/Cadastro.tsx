@@ -4,6 +4,7 @@ import Usuario from '../../models/Usuario'
 import { cadastrarUsuario } from '../../services/Service'
 import { RotatingLines } from 'react-loader-spinner'
 
+
 function Cadastro() {
 
   const navigate = useNavigate()
@@ -70,12 +71,14 @@ function Cadastro() {
 
   return (
     <>
-      <div className="grid grid-cols-1 lg:grid-cols-2 h-screen place-items-center font-bold">
+      <div className="flex w-1/2 m-auto h-screen place-items-center leading-loose">
 
         <div className="fundoCadastro hidden lg:block"></div>
 
-        <form className='flex justify-center items-center flex-col w-2/3 gap-3' onSubmit={cadastrarNovoUsuario}>
-          <h2 className='text-slate-900 text-5xl'>Cadastrar</h2>
+        <form className='flex justify-center items-center flex-col w-2/3 gap-3 m-auto bg-white bg-opacity-50 rounded shadow-xl p-12'
+          onSubmit={cadastrarNovoUsuario} // onSubmit é o evento que dispara a função de cadastro quando o usuário clica em cadastrar
+        >
+          <h2 className='font-medium text-center text-2xl font-bold'>Cadastrar</h2>
           <div className="flex flex-col w-full">
             <label htmlFor="nome">Nome</label>
             <input
@@ -109,7 +112,7 @@ function Cadastro() {
               type="text"
               id="cpf"
               name="cpf"
-              placeholder="cpf"
+              placeholder="CPF"
               className="border-2 border-slate-700 rounded p-2"
               value={usuario.cpf}
               onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
@@ -142,12 +145,14 @@ function Cadastro() {
           </div>
 
           <div className="flex justify-around w-full gap-8">
-            <button className='rounded text-white bg-red-400 hover:bg-red-700 w-1/2 py-2' onClick={retornar}>
+            <button className='rounded text-white bg-red-700 hover:bg-red-400 w-1/2 py-2'
+              onClick={retornar}>
               Cancelar
             </button>
 
             <button
-              className='rounded text-white bg-indigo-400 hover:bg-indigo-900 w-1/2 py-2 flex justify-center'
+              className='rounded text-white bg-purple-800 hover:bg-purple-600 w-1/2 
+             py-2 flex justify-center'
               type='submit'>
               {
                 isLoading ? <RotatingLines

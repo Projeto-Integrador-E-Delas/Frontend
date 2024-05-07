@@ -32,57 +32,60 @@ function Login() {
 
   return (
     <>
-      <div className="flex font-bold w-full h-screen">
-        <form className="flex justify-center items-center flex-col w-1/2 gap-4 m-auto h-full" onSubmit={login}>
-          <h2 className="text-slate-900 text-5xl ">Entrar</h2>
-          <div className="flex flex-col w-full">
-            <label htmlFor="email">Email</label>
-            <input
-              type="text"
-              id="email"
-              name="email"
-              placeholder="Email"
-              className="border-2 border-slate-700 rounded p-2"
-              value={usuarioLogin.email}
-              onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)} 
-            />
-          </div>
-          <div className="flex flex-col w-full">
-            <label htmlFor="senha">Senha</label>
-            <input
-              type="password"
-              id="senha"
-              name="senha"
-              placeholder="Senha"
-              className="border-2 border-slate-700 rounded p-2"
-              value={usuarioLogin.senha}
-              onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)} 
-            />
-          </div>
+      <div className="h-screen font-sans login bg-cover">
+        <div className="container mx-auto h-full flex flex-1 justify-center items-center ">
+          <div className="w-full max-w-2xl max-h-2xl">
+            <div className="leading-loose h-full">
+              <form className="max-w-2xl h-sm m-4 p-10 bg-white bg-opacity-50 rounded shadow-xl " onSubmit={login}>
+              <p className="font-medium text-center text-2xl font-bold">LOGIN</p>
+                <div className="flex flex-col w-full">
+                  <label htmlFor="email">Email</label>
+                  <input
+                    type="text"
+                    id="email"
+                    name="email"
+                    placeholder="Email"
+                    className="border-2 border-slate-700 rounded p-2"
+                    value={usuarioLogin.email}
+                    onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+                  />
+                </div>
+                <div className="flex flex-col w-full">
+                  <label htmlFor="senha">Senha</label>
+                  <input
+                    type="password"
+                    id="senha"
+                    name="senha"
+                    placeholder="Senha"
+                    className="border-2 border-slate-700 rounded p-2"
+                    value={usuarioLogin.senha}
+                    onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+                  />
+                </div>
 
 
-          <button type='submit' className="rounded bg-indigo-400 hover:bg-indigo-900 text-white w-1/2 py-2 flex justify-center">
-                        {
-                            isLoading ? <RotatingLines
-                                strokeColor="white"
-                                strokeWidth="5"
-                                animationDuration="0.75"
-                                width="24"
-                                visible={true}
-                            /> :
-                                <span>Entrar</span>}
-                    </button>
+                <div className="mt-4 items-center flex justify-between">
+                <button type='submit' className="px-4 py-1 text-white font-light tracking-wider bg-purple-800 hover:bg-purple-600 rounded">
+                  {
+                    isLoading ? <RotatingLines
+                      strokeColor="white"
+                      strokeWidth="5"
+                      animationDuration="0.75"
+                      width="24"
+                      visible={true}
+                    /> :
+                      <span>Entrar</span>}
+                </button>
 
-          <hr className="border-slate-800 w-full" />
-
-          <p>
-            Ainda não tem uma conta?{' '}
-            <Link to="/usuarios/cadastrar" className="text-indigo-800 hover:underline">Cadastre-se</Link>
-          </p>
-        </form>
-      </div>
-    </>
-  );
+                  <Link className="inline-block right-0 align-baseline font-bold text-sm text-500 hover:text-purple-600 text-purple-800" to="/usuarios/cadastrar">Cadastre-se</Link>
+                </div>
+              </form>
+              </div>
+            </div>
+            </div>
+            </div>
+          </>
+          );
 }
 
-export default Login;
+          export default Login;
