@@ -36,9 +36,9 @@ function Login() {
         <div className="container mx-auto h-full flex flex-1 justify-center items-center ">
           <div className="w-full max-w-2xl max-h-2xl">
             <div className="leading-loose h-full">
-              <form className="max-w-2xl h-sm m-4 p-10 bg-white bg-opacity-50 rounded shadow-xl " onSubmit={login}>
-              <p className="font-medium text-center text-2xl font-bold">LOGIN</p>
-                <div className="flex flex-col w-full">
+              <form className="max-w-2xl h-sm m-4 p-10 bg-white bg-opacity-50 rounded shadow-2xl " onSubmit={login}>
+              <p className="mb-4 font-medium text-left text-3xl font-bold">Entrar</p>
+                <div className="mb-3 flex flex-col w-full">
                   <label htmlFor="email">Email</label>
                   <input
                     type="text"
@@ -50,7 +50,7 @@ function Login() {
                     onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
                   />
                 </div>
-                <div className="flex flex-col w-full">
+                <div className="mb-3 flex flex-col w-full">
                   <label htmlFor="senha">Senha</label>
                   <input
                     type="password"
