@@ -71,15 +71,15 @@ function Cadastro() {
 
   return (
     <>
-      <div className="flex w-1/2 m-auto h-screen place-items-center leading-loose">
+      <div className="flex w-1/2 max-w-2xl mx-auto place-items-center leading-loose">
 
         <div className="fundoCadastro hidden lg:block"></div>
 
-        <form className='flex justify-center items-center flex-col w-2/3 gap-3 m-auto bg-white bg-opacity-50 rounded shadow-xl p-12'
+        <form className='my-20 flex justify-center flex-col w-2/3 gap-3 m-auto bg-white bg-opacity-50 rounded shadow-2xl p-12'
           onSubmit={cadastrarNovoUsuario} // onSubmit é o evento que dispara a função de cadastro quando o usuário clica em cadastrar
         >
-          <h2 className='font-medium text-center text-2xl font-bold'>Cadastrar</h2>
-          <div className="flex flex-col w-full">
+          <h2 className='mb-4 font-medium text-left text-3xl font-bold'>Cadastrar</h2>
+          <div className="mb-3 flex flex-col w-full">
             <label htmlFor="nome">Nome</label>
             <input
               type="text"
@@ -93,7 +93,7 @@ function Cadastro() {
             />
           </div>
 
-          <div className="flex flex-col w-full">
+          <div className="mb-3 flex flex-col w-full">
             <label htmlFor="email">Email</label>
             <input
               type="text"
@@ -106,7 +106,7 @@ function Cadastro() {
             />
           </div>
 
-          <div className="flex flex-col w-full">
+          <div className="mb-3 flex flex-col w-full">
             <label htmlFor="cpf">CPF</label>
             <input
               type="text"
@@ -131,7 +131,7 @@ function Cadastro() {
             />
           </div>
 
-          <div className="flex flex-col w-full">
+          <div className="mb-3 flex flex-col w-full">
             <label htmlFor="confirmarSenha">Confirmar Senha</label>
             <input
               type="password"
