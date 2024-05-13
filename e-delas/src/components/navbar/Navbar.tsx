@@ -17,13 +17,18 @@ function Navbar() {
             <Link to="/sobre" className="hover:underline">
               Sobre nós
             </Link>
-            <Link to="/usuarios/logar" className="hover:underline">
+            <Link to="/categoria" className="hover:underline">
+              Categoria
+            </Link>
+            <Link to="/cadastrarCategoria" className="hover:underline">
+              Cadastrar Categoria
+            </Link>
+            <Link to="/logar" className="hover:underline">
               <button className="px-4 py-1 text-purple-800 font-light tracking-wider bg-white hover:bg-gray-100 rounded">
-                {" "}
                 Entrar
               </button>
             </Link>
-            <Link to="/usuarios/cadastrar" className="hover:underline">
+            <Link to="/cadastrar" className="hover:underline">
               <button className="px-4 py-1 text-purple-800 font-light tracking-wider bg-white hover:bg-gray-100 rounded">
                 Cadastrar
               </button>
