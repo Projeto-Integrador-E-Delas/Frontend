@@ -24,7 +24,19 @@ function Navbar() {
               Sobre nós
             </Link>
             <Link
-              to="/categoria"
+              to="/servicos"
+              className="text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-gray-300 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparen"
+            >
+              Serviços
+            </Link>
+            <Link
+              to="/cadastrarServico"
+              className="text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-gray-300 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparen"
+            >
+              Cadastrar Serviços
+            </Link>
+            <Link
+              to="/categorias"
               className="text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-gray-300 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparen"
             >
               Categoria

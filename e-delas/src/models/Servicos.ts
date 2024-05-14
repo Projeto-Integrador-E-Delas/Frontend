@@ -1,10 +1,10 @@
 import Categorias from "./Categorias";
 import Usuario from "./Usuario";
 
-export default interface Servico {
+export default interface Servicos {
   id: number;
   nome: string;
-  agendamendato: string;
+  agendamento: string;
   valor: number;
   descricao: string;
   foto: string;
