@@ -2,6 +2,8 @@ import { FacebookLogo, InstagramLogo, LinkedinLogo} from "@phosphor-icons/react"
 
 function Footer() {
   return (
+
+    
     <footer className="flex flex-col items-center bg-gradient-to-r from-purple-900 via-purple-600 to-purple-400 text-white text-center text-surface dark:bg-neutral-700 dark:text-white">
       <div className="container pt-7">
         <div className="mb-6 flex justify-center space-x-2">

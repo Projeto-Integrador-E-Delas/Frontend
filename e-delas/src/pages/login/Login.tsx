@@ -35,8 +35,7 @@ function Login() {
     <div className="min-h-screen font-sans login bg-cover flex items-center justify-center">
       <div className="container mx-auto flex justify-center items-center">
         <div className="flex flex-wrap lg:flex-nowrap w-full max-w-6xl rounded overflow-hidden">
-          <div className="hidden lg:flex lg:w-1/2">
-            <img src={loginImage} alt="Login" className="object-cover w-full h-full" />
+          <div className="hidden lg:flex lg:w-1/2">          
           </div>
           <div className="w-full lg:w-1/2 p-10 flex justify-center items-center bg-white bg-opacity-90">
             <div className="leading-loose w-full">
@@ -46,7 +45,9 @@ function Login() {
               >
                 <p className="mb-4 font-medium text-left text-3xl">Entrar</p>
                 <div className="mb-3 flex flex-col w-full">
-                  <label htmlFor="email" className="mb-2">Email</label>
+                  <label htmlFor="email" className="mb-2">
+                    Email
+                  </label>
                   <input
                     type="text"
                     id="email"
@@ -60,7 +61,9 @@ function Login() {
                   />
                 </div>
                 <div className="mb-3 flex flex-col w-full">
-                  <label htmlFor="senha" className="mb-2">Senha</label>
+                  <label htmlFor="senha" className="mb-2">
+                    Senha
+                  </label>
                   <input
                     type="password"
                     id="senha"
@@ -92,12 +95,17 @@ function Login() {
                     )}
                   </button>
 
-                  <Link
-                    className="inline-block align-baseline font-bold text-base text-purple-800 hover:text-purple-600"
-                    to="/usuarios/cadastrar"
-                  >
-                    Cadastre-se
-                  </Link>
+                  <hr className="border-slate-800 w-full" />
+
+                  <p>
+                    Ainda não tem uma conta?{" "}
+                    <Link
+                      to="/cadastro"
+                      className="text-purple-800 hover:underline"
+                    >
+                      Cadastre-se
+                    </Link>
+                  </p>
                 </div>
               </form>
             </div>
