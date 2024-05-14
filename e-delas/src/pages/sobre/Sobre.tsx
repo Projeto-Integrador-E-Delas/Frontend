@@ -67,7 +67,7 @@ function Sobre() {
                     </p>
                   </div>
 
-                  <p className="mb-0 text-neutral-500 dark:text-neutral-300">
+                  <p className="mb-2 text-neutral-500 dark:text-neutral-300">
                     Tem como intuito reunir em uma só plataforma mulheres
                     autônomas que queiram promover e vender seus
                     empreendimentos, proporcionando-às maior visibilidade no

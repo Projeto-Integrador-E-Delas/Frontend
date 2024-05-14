@@ -73,8 +73,8 @@ function DeletarCategoria() {
                 <header className='py-2 px-6 bg-indigo-600 text-white font-bold text-2xl'>Categoria</header>
                 <p className='p-8 text-3xl bg-slate-200 h-full'>{categoria.nome}</p>
                 <div className="flex">
-                    <button className='text-slate-100 bg-red-400 hover:bg-red-600 w-full py-2' onClick={retornar}>Não</button>
-                    <button className='w-full text-slate-100 bg-indigo-400 hover:bg-indigo-600 flex items-center justify-center' onClick={deletarTema}>
+                    <button className='text-slate-100 bg-red-600 hover:bg-red-400 w-full py-2' onClick={retornar}>Não</button>
+                    <button className='w-full text-white font-light tracking-wider bg-purple-800 hover:bg-purple-600 flex items-center justify-center' onClick={deletarTema}>
                         Sim
                     </button>
                 </div>
