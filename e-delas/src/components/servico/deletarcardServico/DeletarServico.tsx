@@ -44,7 +44,7 @@ function DeletarServico() {
   }, [id])
 
   function retornar() {
-    navigate("/servico")
+    navigate("/servicos")
   }
 
   async function deletarServico() {
