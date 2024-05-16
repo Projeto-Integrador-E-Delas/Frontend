@@ -100,7 +100,7 @@ function Login() {
                   <p>
                     Ainda não tem uma conta?{" "}
                     <Link
-                      to="/cadastro"
+                      to="/cadastrar"
                       className="text-purple-800 hover:underline"
                     >
                       Cadastre-se

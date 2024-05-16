@@ -162,7 +162,7 @@ function FormularioServico() {
             value={servico.agendamento}
             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
             type="text"
-            placeholder="Nome"
+            placeholder="Data do agendamento"
             name="agendamento"
             required
             className="border-2 border-slate-700 rounded p-2"

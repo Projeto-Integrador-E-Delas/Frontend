@@ -33,7 +33,7 @@ function DeletarCategoria() {
     useEffect(() => {
         if (token === '') {
             toastAlerta('Você precisa estar logado', 'info')
-            navigate('/login')
+            navigate('/logar')
         }
     }, [token])
 
