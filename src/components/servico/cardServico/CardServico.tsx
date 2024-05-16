@@ -7,6 +7,15 @@ interface CardServicoProps {
   post: Servicos
 }
 
+
+{/* <div className="flex">
+<Card nome="Teste" descricao="Teste" preco="Teste"/>
+<Card nome="Teste2" descricao="Teste2" preco="Teste2"/>
+<Card nome="Teste3" descricao="Teste3" preco="Teste3"/>
+</div> */}
+
+
+
 function CardServico({post}: CardServicoProps) {
   return (
     <div className='border-slate-900 border flex flex-col rounded overflow-hidden justify-between'>

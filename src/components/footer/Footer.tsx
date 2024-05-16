@@ -1,12 +1,68 @@
 import { FacebookLogo, InstagramLogo, LinkedinLogo} from "@phosphor-icons/react";
-
+const participantes = [
+  {
+    foto: "../src/assets/banner1.png",
+    nome: "Victor Yazigi Saliba",
+    funcao: "Desenvolvedor full stack",
+    site:"https://www.Google.com.br"
+  },
+  {
+    foto: "../src/assets/banner2.png",
+    nome: "Eduardo Ferracini",
+    funcao: "Desenvolvedor full stack",
+    site:"https://www.Google.com.br"
+  },
+  {
+    foto: "../src/assets/banner3.png",
+    nome: "Barbara Bischain",
+    funcao: "Desenvolvedora full stack",
+    site:"https://www.Google.com.br"
+  },
+  {
+    foto: "../src/assets/banner4.png",
+    nome: "Victoria Portugal",
+    funcao: "Desenvolvedora full stack",
+    site:"https://www.Google.com.br"
+  },
+  {
+    foto: "../src/assets/banner5.png",
+    nome: "Gabriella Manfredo",
+    funcao: "Desenvolvedora full stack",
+    site:"https://www.Google.com.br"
+  },
+  {
+    foto: "../src/assets/banner5.png",
+    nome: "Douglas Pinto",
+    funcao: "Desenvolvedor full stack",
+    site:"https://www.Google.com.br"
+  },
+];
 function Footer() {
   return (
 
     
-    <footer className="flex flex-col items-center bg-gradient-to-r from-purple-900 via-purple-600 to-purple-400 text-white text-center text-surface dark:bg-neutral-700 dark:text-white">
-      <div className="container pt-7">
-        <div className="mb-6 flex justify-center space-x-2">
+    <footer className="flex flex-col font-poppins items-center bg-gradient-to-r from-purple-900 via-purple-600 to-purple-400 text-white text-center text-surface dark:bg-neutral-700 dark:text-white">
+      <div className="flex flex-col items-center gap-8 w-full p-4 bg-purple-700 ">
+  <span className="text-xl font-bold text-white w-full">NOS CONHEÇA</span> 
+  <div className="flex gap-16 w-full h-29 justify-center ">
+    {participantes.map((participante) => (
+      <div key={participante.nome} className="w-48 flex flex-col items-center text-white">
+        <a href={participante.site}
+          className="w-24 h-24 rounded-full bg-cover bg-center transform hover: transition duration-500 hover:scale-125"
+          style={{ backgroundImage: `url(${participante.foto})` }}
+        ></a>
+        <div className="text-center mt-2">
+          <div className="text-md font-bold text-white">{participante.nome}</div>
+          <div>{participante.funcao}</div>
+        </div>
+      </div>
+    ))}
+  </div>
+</div>
+       
+
+      <div className="w-full p-4 ">
+      <div className="flex justify-center">
           <a
             href="#!"
             type="button"
@@ -108,13 +164,13 @@ function Footer() {
               </svg>
             </span>
           </a>
+      </div>
+      <div className="text-center">
+          © 2024 Copyright:
+        <a href="https://tw-elements.com/" className="flex-col w-full"> E-delas®</a>
         </div>
       </div>
-
-      <div className="w-full bg-black/5 p-4 text-center">
-        © 2024 Copyright:
-        <a href="https://tw-elements.com/"> E-delas®</a>
-      </div>
+      
     </footer>
   );
 }

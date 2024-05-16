@@ -1,8 +1,14 @@
-import { useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import "./Home.css";
 import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
 import { RxDotFilled } from "react-icons/rx";
-import imgexemple from "../../assets/woman.jpg";
+import Card from "../../components/Card/Card";
+import Servicos from "../../models/Servicos";
+import { Dna } from "react-loader-spinner";
+import { useNavigate } from "react-router-dom";
+import { toastAlerta } from "../../utils/toastAlerta";
+import { buscar } from "../../services/Service";
+import { AuthContext } from "../../contexts/AuthContext";
 const slides = [
   {
     url: "../src/assets/banner1.png",
@@ -21,8 +27,40 @@ const slides = [
   },
 ];
 
+
+
 function Home() {
+
+  const [servico, setServico] = useState<Servicos[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
+
+  let navigate = useNavigate();
+
+  const { usuario, handleLogout } = useContext(AuthContext);
+  const token = usuario.token;
+
+  useEffect(() => {
+    if (token === '') {
+      toastAlerta('Você precisa estar logado', 'info');
+      navigate('/');
+    }
+  }, [token]);
+
+  async function buscarServico() {
+    try {
+      await buscar('/servico', setServico);
+
+      
+    } catch (error: any) {
+        toastAlerta('Erro desconhecido, tente logar novamente', 'info')
+        handleLogout()
+    }
+  }
+
+  useEffect(() => {
+    buscarServico();
+  }, [servico.length]);
+
 
   const prevSlide = () => {
     const isFirstSlide = currentIndex === 0;
@@ -39,8 +77,9 @@ function Home() {
   };
   return (
     <>
-      <div className="h-screen font-poppins">
-        <div className="w-max-[1400px] w-4/6 h-[400px] relative m-auto">
+      <div className="h-full font-poppins">
+        
+        <div className="w-max-[1400px] w-full h-[500px] relative m-auto">
           <div
             style={{ backgroundImage: `url(${slides[currentIndex].url})` }}
             className="w-full h-full bg-center bg-cover duration-500"
@@ -53,6 +92,7 @@ function Home() {
           <div className="absolute top-[50%] -translate-x-0 translate-y-[-50%] right-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer">
             <BsChevronCompactRight onClick={nextSlide} size={30} />
           </div>
+          
           <div className="flex top-4 justify-center">
             {slides.map((slide, slideIndex) => (
               <div
@@ -61,26 +101,32 @@ function Home() {
                 className="text-2xl cursor-pointer"
               >
                 <RxDotFilled
-                  className={`${
-                    slideIndex === currentIndex ? "text-white" : "text-gray-500"
-                  }`}
+                  className={`${slideIndex === currentIndex ? "text-white" : "text-gray-500"
+                    }`}
                 />
               </div>
             ))}
-          </div>
-          <div className="flex justify-around">
-          <img className="rounded-full w-24 h-24" src={imgexemple} alt="image"></img>
-          <img className="rounded-full w-24 h-24" src={imgexemple} alt="image"></img>
-          <img className="rounded-full w-24 h-24" src={imgexemple} alt="image"></img>
-          <img className="rounded-full w-24 h-24" src={imgexemple} alt="image"></img>
-          <img className="rounded-full w-24 h-24" src={imgexemple} alt="image"></img>
-          <img className="rounded-full w-24 h-24" src={imgexemple} alt="image"></img>
-          <img className="rounded-full w-24 h-24" src={imgexemple} alt="image"></img>
-          </div>
-
-
+          </div>          
         </div>
+
+        {servico.length === 0 && (
+            <Dna
+              visible={true}
+              height="200"
+              width="200"
+              ariaLabel="dna-loading"
+              wrapperStyle={{}}
+              wrapperClass="dna-wrapper mx-auto"
+            />
+          )}
+
+          <div className="flex justify-center w-full flex-wrap gap-4 p-4">
+            {servico.map((servico) => (
+              <Card key={servico.id} post={servico} />
+            ))}
+          </div>
       </div>
+
     </>
   );
 }
