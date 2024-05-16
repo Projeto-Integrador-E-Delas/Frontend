@@ -20,7 +20,7 @@ const Card = ({post}: CardServicoProps) => {
           </div>
           <div className="flex items-center">
             <div className="text-lg text-white font-light">
-              {post.valor}
+              R${post.valor}
             </div>
            
           </div>
