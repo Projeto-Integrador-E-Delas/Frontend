@@ -35,7 +35,14 @@ function Login() {
     <div className="min-h-screen font-sans login bg-cover flex items-center justify-center">
       <div className="container mx-auto flex justify-center items-center">
         <div className="flex flex-wrap lg:flex-nowrap w-full max-w-6xl rounded overflow-hidden">
-          <div className="hidden lg:flex lg:w-1/2">          
+          <div className="hidden lg:flex lg:w-1/2">     
+          <div>
+                <img
+                  src={loginImage}
+                  className="w-full rounded-lg shadow-lg dark:shadow-black/20"
+                  alt="image"
+                />
+              </div>
           </div>
           <div className="w-full lg:w-1/2 p-10 flex justify-center items-center bg-white bg-opacity-90">
             <div className="leading-loose w-full">
@@ -95,13 +102,13 @@ function Login() {
                     )}
                   </button>
 
-                  <hr className="border-slate-800 w-full" />
+                  <hr className="border-transparent w-full" />
 
                   <p>
                     Ainda não tem uma conta?{" "}
                     <Link
                       to="/cadastrar"
-                      className="text-purple-800 hover:underline"
+                      className="text-purple-800 hover:underline font-bold"
                     >
                       Cadastre-se
                     </Link>

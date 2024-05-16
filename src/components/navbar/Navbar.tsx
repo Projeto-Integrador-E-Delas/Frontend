@@ -1,5 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
-import img from "/src/assets/2.svg";
+import img from "/src/assets/logo.svg";
 import { useContext } from "react";
 import { AuthContext } from "../../contexts/AuthContext";
 import { toastAlerta } from "../../utils/toastAlerta";
@@ -64,11 +64,11 @@ function Navbar() {
           </div>
 
           <div className="flex gap-6 justify-center items-center mt-4">
-            <Link to="/logar" className="hover:underline">
+            {/* <Link to="/logar" className="hover:underline">
               <button className="px-4 py-1 text-purple-800 font-light tracking-wider bg-white hover:bg-gray-100 rounded">
                 Entrar
               </button>
-            </Link>
+            </Link> */}
             <Link
               to="" onClick={logout} className="flex text-white hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-gray-300 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparen">
               Sair
@@ -107,6 +107,11 @@ function Navbar() {
             <Link to="/logar" className="hover:underline">
               <button className="px-4 py-1 text-purple-800 font-light tracking-wider bg-white hover:bg-gray-100 rounded">
                 Entrar
+              </button>
+            </Link>
+            <Link to="/cadastrar" className="hover:underline">
+              <button className="px-4 py-1 text-purple-800 font-light tracking-wider bg-white hover:bg-gray-100 rounded">
+                Cadastrar
               </button>
             </Link>
 

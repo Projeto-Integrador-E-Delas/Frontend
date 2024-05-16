@@ -9,7 +9,7 @@ const Card = ({post}: CardServicoProps) => {
   return (
         <div className=" bg-white rounded-lg w-80 p-2 transform hover:translate-y-2 hover:shadow-xl transition duration-300">
         <figure className="mb-2">
-          <img src="https://srv-cdn.onedio.com/store/bf2cbc886120f284ef46fd92a48f5fb58c62e6a50fbdf8fa796d057dd0ddc242.png" alt="" className="h-64 ml-auto mr-auto" />
+          <img src={post.foto} alt="" className="h-64 w-full" />
         </figure>
         <div className="rounded-lg p-4 bg-purple-700 flex flex-col">
           <div>
@@ -20,7 +20,7 @@ const Card = ({post}: CardServicoProps) => {
           </div>
           <div className="flex items-center">
             <div className="text-lg text-white font-light">
-              {post.valor}
+              R${post.valor}
             </div>
            
           </div>

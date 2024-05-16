@@ -86,7 +86,7 @@ function FormularioCategoria() {
   }
 
   function retornar() {
-    navigate("/categoria")
+    navigate("/categorias")
   }
 
   useEffect(() => {
@@ -115,12 +115,25 @@ function FormularioCategoria() {
           />
         </div>
 
+        {/* <div className="flex flex-col gap-2">
+          <label htmlFor="titulo">Foto</label>
+          <input
+            value={servico.foto}
+            onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+            type="text"
+            placeholder="Foto"
+            name="foto"
+            required
+            className="border-2 border-slate-700 rounded p-2"
+          />
+        </div> */}
+
         <div className="flex flex-col gap-2">
           <label htmlFor="icone">Icone da Categoria</label>
           <input
             type="text"
             placeholder="icone"
-            name='icone'
+            name="icone"
             className="border-2 border-slate-700 rounded p-2"
             value={categoria.icone}
             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}

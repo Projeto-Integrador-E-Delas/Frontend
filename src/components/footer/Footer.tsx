@@ -1,40 +1,40 @@
 import { FacebookLogo, InstagramLogo, LinkedinLogo} from "@phosphor-icons/react";
 const participantes = [
   {
-    foto: "../src/assets/banner1.png",
+    foto: "../src/assets/victor.jpg",
     nome: "Victor Yazigi Saliba",
     funcao: "Desenvolvedor full stack",
-    site:"https://www.Google.com.br"
+    site:"https://www.linkedin.com/in/victor-yazigi-75549521a/"
   },
   {
-    foto: "../src/assets/banner2.png",
+    foto: "../src/assets/eduardo.jpeg",
     nome: "Eduardo Ferracini",
     funcao: "Desenvolvedor full stack",
-    site:"https://www.Google.com.br"
+    site:"https://www.linkedin.com/in/eduardo-ferracini/"
   },
   {
-    foto: "../src/assets/banner3.png",
+    foto: "../src/assets/barbara.jpg",
     nome: "Barbara Bischain",
     funcao: "Desenvolvedora full stack",
-    site:"https://www.Google.com.br"
+    site:"https://www.linkedin.com/in/barbarabischain/"
   },
   {
-    foto: "../src/assets/banner4.png",
+    foto: "../src/assets/victoria.jpg",
     nome: "Victoria Portugal",
     funcao: "Desenvolvedora full stack",
-    site:"https://www.Google.com.br"
+    site:"https://www.linkedin.com/in/devvictoriafernandes/"
   },
   {
-    foto: "../src/assets/banner5.png",
+    foto: "../src/assets/gabriella.jpg",
     nome: "Gabriella Manfredo",
     funcao: "Desenvolvedora full stack",
-    site:"https://www.Google.com.br"
+    site:"https://www.linkedin.com/in/gabriellamanfredo/"
   },
   {
-    foto: "../src/assets/banner5.png",
+    foto: "../src/assets/douglas.jpg",
     nome: "Douglas Pinto",
     funcao: "Desenvolvedor full stack",
-    site:"https://www.Google.com.br"
+    site:"https://www.linkedin.com/in/douglaspnt/"
   },
 ];
 function Footer() {

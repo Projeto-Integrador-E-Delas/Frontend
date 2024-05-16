@@ -8,39 +8,56 @@ interface CardServicoProps {
 }
 
 
-{/* <div className="flex">
-<Card nome="Teste" descricao="Teste" preco="Teste"/>
-<Card nome="Teste2" descricao="Teste2" preco="Teste2"/>
-<Card nome="Teste3" descricao="Teste3" preco="Teste3"/>
-</div> */}
-
-
+// return (
+//   <div className=" bg-white rounded-lg w-80 p-2 transform hover:translate-y-2 hover:shadow-xl transition duration-300">
+//   <figure className="mb-2">
+//     <img src={post.foto} alt="" className="h-64 w-full" />
+//   </figure>
+//   <div className="rounded-lg p-4 bg-purple-700 flex flex-col">
+//     <div>
+//       <h5 className="text-white text-2xl font-bold leading-none">
+//         {post.nome}
+//       </h5>
+//       <span className="text-xs text-gray-400 leading-none">{post.descricao}</span>
+//     </div>
+//     <div className="flex items-center">
+//       <div className="text-lg text-white font-light">
+//         {post.valor}
+//       </div>
+     
+//     </div>
+//   </div>
+//   </div>
+// )
 
 function CardServico({post}: CardServicoProps) {
   return (
-    <div className='border-slate-900 border flex flex-col rounded overflow-hidden justify-between'>
-      <div>
-        <div className="flex w-full bg-indigo-400 py-2 px-4 items-center gap-4">
-          <img src={post.usuario?.foto} className='h-12 rounded-full' alt="" />
-          <h3 className='text-lg font-bold text-center uppercase '>{post.usuario?.nome}</h3>
+    <div className=" bg-white rounded-lg w-80 p-2 transform hover:translate-y-2 hover:shadow-xl transition duration-300">
+      <figure className="mb-2">
+        <img src={post.foto} alt="" className="h-64 w-full" />
+      </figure>
+      <div className="rounded-lg p-4 bg-purple-700 flex flex-col">
+          <h5 className="text-white text-2xl font-bold leading-none">
+            {post.nome}
+          </h5>
+        <span className="text-white">{post.descricao}</span>
+        <span className="text-white leading-none">{post.agendamento}</span>
+        <span className="text-white leading-none">{post.categoria?.nome}</span>
+        <div className="flex items-center">
+          <div className="text-lg text-white font-light">
+          R${post.valor}
+          </div>
+
         </div>
-        <div className='p-4 '>
-          <h4 className='text-lg font-semibold uppercase'>{post.nome}</h4>
-          <p>Categoria: {post.categoria?.nome}</p>
-          <p>Agendamento: {post.agendamento}</p>
-          <p>Valor: {post.valor}</p>
-          <p>Descrição: {post.descricao}</p>
-          <p>Foto: {post.foto}</p>
-        </div>
-      </div>
-      <div className="flex">
-      <Link to={`/editarServico/${post.id}`} className='w-full text-white bg-indigo-400 hover:bg-indigo-800 flex items-center justify-center py-2'>
+    <div className="flex">
+        <Link to={`/editarServico/${post.id}`} className='w-full text-white bg-transparent hover:bg-indigo-800 flex items-center justify-center py-2'>
           <button>Editar</button>
         </Link>
-        <Link to={`/deletarServico/${post.id}`} className='text-white bg-red-400 hover:bg-red-700 w-full flex items-center justify-center'>
+        <Link to={`/deletarServico/${post.id}`} className='text-white bg-transparent hover:bg-red-700 w-full flex items-center justify-center'>
           <button>Deletar</button>
         </Link>
       </div>
+    </div>
     </div>
   )
 }

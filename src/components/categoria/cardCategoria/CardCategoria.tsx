@@ -8,10 +8,9 @@ interface CardCategoriaProps {
 
 function CardCategoria({categoria}: CardCategoriaProps) {
   return (
-    <div className='border flex flex-col rounded-2xl overflow-hidden justify-between'>
-      <header className='py-2 px-6 bg-gradient-to-r from-purple-900 via-purple-700 to-purple-500 text-white font-bold text-2xl'>Categoria</header>
-      <p className='p-8 text-3xl bg-slate-200 h-full'>{categoria.nome}</p>
-      <p className='p-8 text-2xl bg-slate-200 h-full'>{categoria.icone}</p>
+    <div className='border flex flex-col rounded-2xl overflow-hidden'>
+      <header className='py-2 px-6 bg-gradient-to-r from-purple-900 via-purple-700 to-purple-500 text-white font-bold text-2xl text-center'>{categoria.nome}</header>
+      <img src={categoria.icone} className='self-center' width={"200"}/>
       <div className="flex">
         <Link to={`/editarCategoria/${categoria.id}`} className='w-full text-white font-light tracking-wider bg-purple-800 hover:bg-purple-600 flex items-center justify-center py-2'>
           <button>Editar</button>
