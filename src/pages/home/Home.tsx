@@ -11,13 +11,13 @@ import { buscar } from "../../services/Service";
 import { AuthContext } from "../../contexts/AuthContext";
 
 const slides = [
-  { url: "../src/assets/banner1.gif" },
-  { url: "../src/assets/banner2.gif" },
-  { url: "../src/assets/banner3.gif" },
-  { url: "../src/assets/banner4.gif" },
-  { url: "../src/assets/banner5.gif" },
-  { url: "../src/assets/banner6.gif" },
-  { url: "../src/assets/banner7.gif" },
+  { url: "src/assets/banner1.gif" },
+  { url: "src/assets/banner2.gif" },
+  { url: "src/assets/banner3.gif" },
+  { url: "src/assets/banner4.gif" },
+  { url: "src/assets/banner5.gif" },
+  { url: "src/assets/banner6.gif" },
+  { url: "src/assets/banner7.gif" },
 ];
 
 function Home() {
