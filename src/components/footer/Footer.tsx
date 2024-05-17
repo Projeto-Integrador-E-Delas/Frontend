@@ -1,37 +1,46 @@
 import { FacebookLogo, InstagramLogo, LinkedinLogo} from "@phosphor-icons/react";
+
+import victor from "../../assets/victor.jpg"
+import victoria from "../../assets/victoria.jpg"
+import gabriella from "../../assets/gabriella.jpg"
+import barbara from "../../assets/barbara.jpg"
+import eduardo from "../../assets/eduardo.jpeg"
+import douglas from "../../assets/douglas.jpg"
+
+
 const participantes = [
   {
-    foto: "../src/assets/victor.jpg",
+    foto: victor,
     nome: "Victor Yazigi Saliba",
     funcao: "Desenvolvedor full stack",
     site:"https://www.linkedin.com/in/victor-yazigi-75549521a/"
   },
   {
-    foto: "../src/assets/eduardo.jpeg",
+    foto: eduardo,
     nome: "Eduardo Ferracini",
     funcao: "Desenvolvedor full stack",
     site:"https://www.linkedin.com/in/eduardo-ferracini/"
   },
   {
-    foto: "../src/assets/barbara.jpg",
+    foto: barbara,
     nome: "Barbara Bischain",
     funcao: "Desenvolvedora full stack",
     site:"https://www.linkedin.com/in/barbarabischain/"
   },
   {
-    foto: "../src/assets/victoria.jpg",
+    foto: victoria,
     nome: "Victoria Portugal",
     funcao: "Desenvolvedora full stack",
     site:"https://www.linkedin.com/in/devvictoriafernandes/"
   },
   {
-    foto: "../src/assets/gabriella.jpg",
+    foto: gabriella,
     nome: "Gabriella Manfredo",
     funcao: "Desenvolvedora full stack",
     site:"https://www.linkedin.com/in/gabriellamanfredo/"
   },
   {
-    foto: "../src/assets/douglas.jpg",
+    foto: douglas,
     nome: "Douglas Pinto",
     funcao: "Desenvolvedor full stack",
     site:"https://www.linkedin.com/in/douglaspnt/"
