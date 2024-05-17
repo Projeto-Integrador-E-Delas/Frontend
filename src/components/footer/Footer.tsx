@@ -7,7 +7,7 @@ const participantes = [
     site:"https://www.linkedin.com/in/victor-yazigi-75549521a/"
   },
   {
-    foto: "../src/assets/logo.svg",
+    foto: "../src/assets/eduardo.jpeg",
     nome: "Eduardo Ferracini",
     funcao: "Desenvolvedor full stack",
     site:"https://www.linkedin.com/in/eduardo-ferracini/"
