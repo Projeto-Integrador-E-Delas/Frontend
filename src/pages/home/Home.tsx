@@ -10,14 +10,22 @@ import { toastAlerta } from "../../utils/toastAlerta";
 import { buscar } from "../../services/Service";
 import { AuthContext } from "../../contexts/AuthContext";
 
+import img1 from '../../assets/banner1.gif'
+import img2 from '../../assets/banner2.gif'
+import img3 from '../../assets/banner3.gif'
+import img4 from '../../assets/banner4.gif'
+import img5 from '../../assets/banner5.gif'
+import img6 from '../../assets/banner6.gif'
+import img7 from '../../assets/banner7.gif'
+
 const slides = [
-  { url: "src/assets/banner1.gif" },
-  { url: "src/assets/banner2.gif" },
-  { url: "src/assets/banner3.gif" },
-  { url: "src/assets/banner4.gif" },
-  { url: "src/assets/banner5.gif" },
-  { url: "src/assets/banner6.gif" },
-  { url: "src/assets/banner7.gif" },
+  { url: img1 },
+  { url: img2 },
+  { url: img3 },
+  { url: img4 },
+  { url: img5 },
+  { url: img6 },
+  { url: img7 },
 ];
 
 function Home() {
