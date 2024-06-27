@@ -7,7 +7,7 @@ interface CardServicoProps {
   post: Servicos
 }
 
-function CardServico({post}: CardServicoProps) {
+function CardServicoSemLogin({post}: CardServicoProps) {
   
   return (
     <div className=" bg-white rounded-lg w-80 p-2 transform hover:translate-y-2 hover:shadow-xl transition duration-300">
@@ -27,22 +27,13 @@ function CardServico({post}: CardServicoProps) {
           </div>
 
         </div>
-        
-      <div className="flex">
-        <Link to={`/editarServico/${post.id}`} className='w-full text-white bg-transparent hover:bg-indigo-800 flex items-center justify-center py-2'>
-          <button>Editar</button>
-        </Link>
-        <Link to={`/deletarServico/${post.id}`} className='text-white bg-transparent hover:bg-red-700 w-full flex items-center justify-center'>
-          <button>Deletar</button>
-        </Link>
-      </div>
 
     </div>
     </div>
   )
 }
 
-export default CardServico
+export default CardServicoSemLogin
 
 
 // return (
