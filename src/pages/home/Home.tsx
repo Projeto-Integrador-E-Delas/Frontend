@@ -2,9 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import "./Home.css";
 import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
 import { RxDotFilled } from "react-icons/rx";
-import Card from "../../components/Card/Card";
 import Servicos from "../../models/Servicos";
-import { Dna } from "react-loader-spinner";
 import { useNavigate } from "react-router-dom";
 import { toastAlerta } from "../../utils/toastAlerta";
 import { buscar } from "../../services/Service";
@@ -17,6 +15,7 @@ import img4 from '../../assets/banner4.gif'
 import img5 from '../../assets/banner5.gif'
 import img6 from '../../assets/banner6.gif'
 import img7 from '../../assets/banner7.gif'
+import ListaServico from "../../components/servico/listaServico/ListaServico";
 
 const slides = [
   { url: img1 },
@@ -32,7 +31,6 @@ function Home() {
   const [servico, setServico] = useState<Servicos[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  let navigate = useNavigate();
   const {handleLogout } = useContext(AuthContext);
   // const token = usuario.token;
 
@@ -83,10 +81,10 @@ function Home() {
   };
 
   return (
-    <div className="h-full font-poppins">
-      <div className="w-max-[1400px] w-full h-[700px] relative m-aut mt-4">
+    <div className="container mx-auto font-poppins">
+      <div className="w-max-[1400px] w-full h-[500px] relative m-aut">
         <div
-          style={{ backgroundImage: `url(${slides[currentIndex].url})` }}
+          style={{ backgroundImage: `url(${slides[currentIndex].url})`, backgroundSize: 'contain', backgroundRepeat: 'no-repeat' }}
           className="w-full h-full bg-center bg-cover duration-500"
         ></div>
 
@@ -114,23 +112,7 @@ function Home() {
           ))}
         </div>
       </div>
-
-      {servico.length === 0 && (
-        <Dna
-          visible={true}
-          height="200"
-          width="200"
-          ariaLabel="dna-loading"
-          wrapperStyle={{}}
-          wrapperClass="dna-wrapper mx-auto"
-        />
-      )}
-
-      <div className="flex justify-center w-full flex-wrap gap-4 p-4">
-        {servico.map((servico) => (
-          <Card key={servico.id} post={servico} />
-        ))}
-      </div>
+      <ListaServico />
     </div>
   );
 }

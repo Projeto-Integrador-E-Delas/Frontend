@@ -5,89 +5,84 @@ import { AuthContext } from "../../contexts/AuthContext";
 import { toastAlerta } from "../../utils/toastAlerta";
 
 function Navbar() {
+  const navigate = useNavigate();
 
-  let navigate = useNavigate()
-
-  const { usuario, handleLogout } = useContext(AuthContext)
+  const { usuario, handleLogout } = useContext(AuthContext);
 
   function logout() {
-    handleLogout()
-    toastAlerta('Usuário deslogado com sucesso', "sucesso")
-    navigate('/logar')
+    handleLogout();
+    toastAlerta("Usuário deslogado com sucesso", "sucesso");
+    navigate("/logar");
   }
 
-
-  let navBarComponent
+  let navBarComponent;
 
   if (usuario.token !== "") {
     navBarComponent = (
-      <nav className="sticky top-0 z-10 shadow-lg font-poppins w-full bg-gradient-to-r from-purple-900 via-purple-600 to-purple-400 text-white flex justify-center py-6 text-xl">
-        <div className="container flex justify-between items-start">
-          <div className="img">
+      <nav className="sticky flex items-center top-0 h-20 z-10 shadow-lg font-poppins w-full bg-gradient-to-r from-purple-900 via-purple-600 to-purple-400 text-white text-xl">
+        <div className="container px-4 flex justify-between items-center">
+          <div className="text-base flex gap-6 justify-center items-center">
             <Link to="/home">
-              <img src={img} width={180} height={120} alt="Clickable Image" />
+              <img src={img} width={180} height={120} alt="Clickable Image" className="w-36" />
             </Link>
           </div>
 
-          <div className="mt-5 flex gap-6 justify-center items-center w-full">
+          <div className="text-base flex gap-6 justify-center items-center">
             <Link
               to="/sobre"
-              className="text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-gray-300 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparen"
+              className="text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-gray-300 md:p-0 dark:text-white md:dark:hover:text-purple-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparen"
             >
               Sobre nós
             </Link>
 
             <Link
               to="/servicos"
-              className=" text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-gray-300 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent has-submenu"
-            >
+              className="text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-gray-300 md:p-0 dark:text-white md:dark:hover:text-purple-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparen"            >
               Serviços
             </Link>
             <Link
               to="/cadastrarServico"
-              className=" text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-gray-300 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent sub-menu"
-            >
+              className="text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-gray-300 md:p-0 dark:text-white md:dark:hover:text-purple-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparen"            >
               Cadastrar Serviços
             </Link>
             <Link
               to="/categorias"
-              className="sub-menu text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-gray-300 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparen"
-            >
+              className="text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-gray-300 md:p-0 dark:text-white md:dark:hover:text-purple-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparen"            >
               Categoria
             </Link>
             <Link
               to="/cadastrarCategoria"
-              className="text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-gray-300 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparen"
-            >
+              className="text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-gray-300 md:p-0 dark:text-white md:dark:hover:text-purple-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparen"            >
               Cadastrar Categoria
             </Link>
           </div>
 
-          <div className="flex gap-6 justify-center items-center mt-4">
-            {/* <Link to="/logar" className="hover:underline">
-              <button className="px-4 py-1 text-purple-800 font-light tracking-wider bg-white hover:bg-gray-100 rounded">
-                Entrar
-              </button>
-            </Link> */}
+          <div className="flex gap-6 justify-end items-center">
             <Link
-              to="" onClick={logout} className="flex text-white hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-gray-300 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparen">
+              to=""
+              onClick={logout}
+              className="flex text-white hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-gray-300 md:p-0 dark:text-white md:dark:hover:text-purple-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparen"
+            >
               Sair
             </Link>
           </div>
         </div>
       </nav>
-    )
+    );
   } else {
     navBarComponent = (
-      <nav className="sticky top-0 z-10 shadow-lg font-poppins w-full bg-gradient-to-r from-purple-900 via-purple-600 to-purple-400 text-white flex justify-center py-6 text-xl">
-        <div className="container flex justify-between items-start">
-          <div className="img">
+      <nav className="sticky flex justify-center items-center top-0 h-20 z-10 shadow-lg font-poppins w-full bg-gradient-to-r from-purple-900 via-purple-600 to-purple-400 text-white text-xl">
+        <div className="container px-4 flex justify-between items-center">
+          <div className="text-base flex gap-6 justify-center items-center">
             <Link to="/home">
-              <img src={img} width={180} height={120} alt="Clickable Image" />
+              <img src={img} width={180} height={120} alt="Clickable Image" className="w-36" />
             </Link>
-          </div>
-
-          <div className="mt-5 flex gap-6 justify-center items-center w-full">
+            <Link
+              to="/"
+              className="text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-gray-300 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparen"
+            >
+              Inicio
+            </Link>
             <Link
               to="/sobre"
               className="text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-gray-300 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparen"
@@ -102,32 +97,25 @@ function Navbar() {
               Serviços
             </Link>
           </div>
+          
 
-          <div className="flex gap-6 justify-center items-center mt-4">
+          <div className="flex gap-5 justify-center items-center">
             <Link to="/logar" className="hover:underline">
-              <button className="px-4 py-1 text-purple-800 font-light tracking-wider bg-white hover:bg-gray-100 rounded">
+              <button className="px-2 py-1 text-purple-800 font-light tracking-wider bg-white hover:bg-gray-100 rounded">
                 Entrar
               </button>
             </Link>
             <Link to="/cadastrar" className="hover:underline">
-              <button className="px-4 py-1 text-purple-800 font-light tracking-wider bg-white hover:bg-gray-100 rounded">
+              <button className="px-2 py-1 text-purple-800 font-light tracking-wider bg-white hover:bg-gray-100 rounded">
                 Cadastrar
               </button>
             </Link>
-
           </div>
         </div>
       </nav>
-    )
-
+    );
   }
-  return (
-    <>
-
-      {navBarComponent}
-
-    </>
-  );
+  return <>{navBarComponent}</>;
 }
 
 export default Navbar;

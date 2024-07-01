@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from 'react';
+import { useCallback, useContext, useEffect, useState } from 'react';
 import { Dna } from 'react-loader-spinner';
 import { AuthContext } from '../../../contexts/AuthContext';
 import { buscar } from '../../../services/Service';
@@ -12,7 +12,7 @@ function ListaServico() {
 
   const { handleLogout } = useContext(AuthContext);
 
-  async function buscarServico() {
+  const buscarServico = useCallback(async () => {
     try {
       await buscar('/servico', setServico, {});
     } catch (error: any) {
@@ -21,11 +21,11 @@ function ListaServico() {
         handleLogout()
       }
     }
-  }
+  }, [handleLogout]);
 
   useEffect(() => {
-    buscarServico();
-  }, [servico.length]);
+    buscarServico()
+  }, [servico, buscarServico]);
 
   return (
     <>
@@ -39,7 +39,7 @@ function ListaServico() {
           wrapperClass="dna-wrapper mx-auto"
         />
       )}
-      <div className='container mx-auto my-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
+      <div className="my-14 container md:px-20 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
         {servico.map((servico) => (
           <CardServico key={servico.id} post={servico} />
         ))}

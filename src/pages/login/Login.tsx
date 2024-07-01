@@ -4,7 +4,7 @@ import { AuthContext } from "../../contexts/AuthContext";
 import { Link, useNavigate } from "react-router-dom";
 import UsuarioLogin from "../../models/UsuarioLogin";
 import { RotatingLines } from "react-loader-spinner";
-import loginImage from "../../assets/loginImage.jpg";
+import loginImage from "../../assets/loginImage.png";
 
 function Login() {
   const { handleLogin, usuario, isLoading } = useContext(AuthContext);
@@ -32,92 +32,94 @@ function Login() {
   }, [usuario, navigate]);
 
   return (
-    <div className="min-h-screen font-sans login bg-cover flex items-center justify-center">
-      <div className="container mx-auto flex justify-center items-center">
-        <div className="flex flex-wrap lg:flex-nowrap w-full max-w-6xl rounded overflow-hidden">
-          <div className="hidden lg:flex lg:w-1/2">     
-          <div>
-                <img
-                  src={loginImage}
-                  className="w-full rounded-lg shadow-lg dark:shadow-black/20"
-                  alt="image"
-                />
-              </div>
-          </div>
-          <div className="w-full lg:w-1/2 p-10 flex justify-center items-center bg-white bg-opacity-90">
-            <div className="leading-loose w-full">
-              <form
-                className="max-w-lg w-full p-10 bg-white rounded shadow-2xl"
-                onSubmit={login}
-              >
-                <p className="mb-4 font-medium text-left text-3xl">Entrar</p>
-                <div className="mb-3 flex flex-col w-full">
-                  <label htmlFor="email" className="mb-2">
-                    Email
-                  </label>
-                  <input
-                    type="text"
-                    id="email"
-                    name="email"
-                    placeholder="Email"
-                    className="border-2 border-slate-700 rounded p-2"
-                    value={usuarioLogin.email}
-                    onChange={(e: ChangeEvent<HTMLInputElement>) =>
-                      atualizarEstado(e)
-                    }
-                  />
-                </div>
-                <div className="mb-3 flex flex-col w-full">
-                  <label htmlFor="senha" className="mb-2">
-                    Senha
-                  </label>
-                  <input
-                    type="password"
-                    id="senha"
-                    name="senha"
-                    placeholder="Senha"
-                    className="border-2 border-slate-700 rounded p-2"
-                    value={usuarioLogin.senha}
-                    onChange={(e: ChangeEvent<HTMLInputElement>) =>
-                      atualizarEstado(e)
-                    }
-                  />
-                </div>
-
-                <div className="mt-4 flex justify-between items-center">
-                  <button
-                    type="submit"
-                    className="px-4 py-2 text-white font-light tracking-wider bg-purple-800 hover:bg-purple-600 rounded"
-                  >
-                    {isLoading ? (
-                      <RotatingLines
-                        strokeColor="white"
-                        strokeWidth="5"
-                        animationDuration="0.75"
-                        width="24"
-                        visible={true}
-                      />
-                    ) : (
-                      <span>Entrar</span>
-                    )}
-                  </button>
-
-                  <hr className="border-transparent w-full" />
-
-                  <p>
-                    Ainda não tem uma conta?{" "}
-                    <Link
-                      to="/cadastrar"
-                      className="text-purple-800 hover:underline font-bold"
-                    >
-                      Cadastre-se
-                    </Link>
-                  </p>
-                </div>
-              </form>
-            </div>
-          </div>
+    <div className="w-full container mx-auto my-12 flex items-center justify-center">
+      <div className="flex items-center justify-between gap-20 flex-wrap lg:flex-nowrap w-full">
+        <div className="hidden lg:flex">
+          <img src={loginImage} className="w-3/2" alt="Sample image" />
         </div>
+        <form
+            className="w-full lg:w-[800px] flex flex-col gap-4 max-w-lg p-10 rounded-lg shadow-2xl"
+            onSubmit={login}
+          >
+            <p className="font-bold text-3xl">Olá novamente! 😄</p>
+            <div className="flex gap-3">
+              <p className="text-gray-500">Ainda não tem uma conta? </p>
+              <Link
+                to="/cadastrar"
+                className="text-purple-800 hover:underline font-bold"
+              >
+                Crie sua conta grátis
+              </Link>
+            </div>
+            <div className="flex flex-col w-full">
+              <label className="mb-1" htmlFor="email">Email</label>
+              <input
+                type="text"
+                id="email"
+                name="email"
+                placeholder="Email"
+                disabled={isLoading}
+                className="
+                  border-2
+                  hover:border-purple-500
+                  focus:border-purple-600
+                  border-gray-500
+                  disabled:border-gray-300
+                  disabled:bg-gray-200
+                  rounded-lg
+                "
+                value={usuarioLogin.email}
+                onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                  atualizarEstado(e)
+                }
+              />
+            </div>
+            <div className="flex flex-col w-full">
+              <label className="mb-1" htmlFor="senha">Senha</label>
+              <input
+                type="password"
+                id="senha"
+                name="senha"
+                placeholder="Senha"
+                disabled={isLoading}
+                className="
+                  border-2
+                  hover:border-purple-500
+                  focus:border-purple-600
+                  border-gray-500
+                  disabled:border-gray-300
+                  disabled:bg-gray-200
+                  rounded-lg
+                "
+                value={usuarioLogin.senha}
+                onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                  atualizarEstado(e)
+                }
+              />
+            </div>
+            <button
+              type="submit"
+              disabled={isLoading}
+              className="
+                mt-3 py-3
+                flex items-center justify-center
+                text-white font-light tracking-wider
+                bg-purple-600 hover:bg-purple-500 rounded
+                disabled:bg-gray-300
+              ">
+              {isLoading ? (
+                <RotatingLines
+                  strokeColor="white"
+                  strokeWidth="5"
+                  animationDuration="0.75"
+                  width="24"
+                  visible={true}
+                />
+              ) : (
+                <span className="font-semibold">Entrar</span>
+              )}
+            </button>
+        </form>
       </div>
     </div>
   );

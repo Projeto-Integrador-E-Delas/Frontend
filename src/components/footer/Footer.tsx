@@ -52,7 +52,7 @@ function Footer() {
     
     <footer className="flex flex-col font-poppins items-center bg-gradient-to-r from-purple-900 via-purple-600 to-purple-400 text-white text-center text-surface dark:bg-neutral-700 dark:text-white">
       <div className="flex flex-col items-center gap-8 w-full p-4 bg-purple-700 ">
-  <span className="text-xl font-bold text-white w-full">NOS CONHEÇA</span> 
+  <span className="text-xl font-bold text-white w-full">Quem somos?</span> 
   <div className="flex gap-16 w-full h-29 justify-center ">
     {participantes.map((participante) => (
       <div key={participante.nome} className="w-48 flex flex-col items-center text-white">
