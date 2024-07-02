@@ -68,12 +68,11 @@ function Sobre() {
                   </div>
 
                   <p className="mb-2 text-neutral-500 dark:text-neutral-300">
-                    Nossa empresa surgiu como um marketplace inspirado nos Objetivos de Desenvolvimento Sustentável da ONU. 
-                    Nosso principal objetivo é proporcionar um ambiente seguro e inclusivo onde as mulheres possam anunciar e 
-                    ganhar visibilidade para seus produtos. Temos como intuito reunir, em uma só plataforma, mulheres autônomas 
-                    que desejam promover e vender seus empreendimentos, proporcionando-lhes maior visibilidade no mercado. 
-                    Dessa forma, possibilitamos que elas alcancem novas oportunidades e recomecem suas vidas de maneira independente e empoderada. 
-                    Acreditamos no poder do empreendedorismo feminino para promover igualdade de gênero e desenvolvimento econômico sustentável.
+                    Tem como intuito reunir em uma só plataforma mulheres
+                    autônomas que queiram promover e vender seus
+                    empreendimentos, proporcionando-às maior visibilidade no
+                    mercado, possibilitando que elas alcancem novas
+                    oportunidades e recomecem suas vidas de maneira independente
                   </p>
                 </div>
               </div>

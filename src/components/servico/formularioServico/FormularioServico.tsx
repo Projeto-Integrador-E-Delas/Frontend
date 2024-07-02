@@ -157,12 +157,12 @@ function FormularioServico() {
           />
         </div>
         <div className="flex flex-col gap-2">
-          <label htmlFor="titulo">Número para agendamento</label>
+          <label htmlFor="titulo">Agendamento</label>
           <input
             value={servico.agendamento}
             onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
             type="text"
-            placeholder="Número de contato"
+            placeholder="Agendamento"
             name="agendamento"
             required
             className="border-2 border-slate-700 rounded p-2"
