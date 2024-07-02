@@ -1,11 +1,11 @@
-import React, { ChangeEvent, useContext, useEffect, useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
-import { AuthContext } from '../../../contexts/AuthContext';
-import { buscar, atualizar, cadastrar } from '../../../services/Service';
-import { toastAlerta } from '../../../utils/toastAlerta';
-import Categorias from '../../../models/Categorias';
-import Servicos from '../../../models/Servicos';
-
+import React, { ChangeEvent, useContext, useEffect, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import { AuthContext } from "../../../contexts/AuthContext";
+import { buscar, atualizar, cadastrar } from "../../../services/Service";
+import { toastAlerta } from "../../../utils/toastAlerta";
+import Categorias from "../../../models/Categorias";
+import Servicos from "../../../models/Servicos";
+import Background from "../../../assets/backgroundFormularioServicos.png";
 
 function FormularioServico() {
   let navigate = useNavigate();
@@ -19,17 +19,17 @@ function FormularioServico() {
 
   const [categoria, setCategoria] = useState<Categorias>({
     id: 0,
-    nome: '',
-    icone:'',
+    nome: "",
+    icone: "",
   });
 
   const [servico, setServico] = useState<Servicos>({
     id: 0,
-    nome: '',
-    agendamento: '',
+    nome: "",
+    agendamento: "",
     valor: 0,
-    descricao: '',
-    foto: '',
+    descricao: "",
+    foto: "",
     categoria: null,
     usuario: null,
   });
@@ -51,7 +51,7 @@ function FormularioServico() {
   }
 
   async function buscarCategoria() {
-    await buscar('/categoria', setCategorias, {
+    await buscar("/categoria", setCategorias, {
       headers: {
         Authorization: token,
       },
@@ -59,9 +59,9 @@ function FormularioServico() {
   }
 
   useEffect(() => {
-    if (token === '') {
-      toastAlerta('Você precisa estar logado', 'info');
-      navigate('/');
+    if (token === "") {
+      toastAlerta("Você precisa estar logado", "info");
+      navigate("/");
     }
   }, [token]);
 
@@ -70,7 +70,6 @@ function FormularioServico() {
     if (id !== undefined) {
       buscarServicoPorId(id);
       console.log(categoria);
-
     }
   }, [id]);
 
@@ -91,7 +90,7 @@ function FormularioServico() {
   }
 
   function retornar() {
-    navigate('/servicos');
+    navigate("/servicos");
   }
 
   async function gerarNovoServico(e: ChangeEvent<HTMLFormElement>) {
@@ -106,14 +105,14 @@ function FormularioServico() {
             Authorization: token,
           },
         });
-        toastAlerta('Serviço atualizado com sucesso', 'sucesso');
+        toastAlerta("Serviço atualizado com sucesso", "sucesso");
         retornar();
       } catch (error: any) {
-        if (error.toString().includes('403')) {
-          toastAlerta('O token expirou, favor logar novamente', 'info')
-          handleLogout()
+        if (error.toString().includes("403")) {
+          toastAlerta("O token expirou, favor logar novamente", "info");
+          handleLogout();
         } else {
-          toastAlerta('Erro ao atualizar o Serviço', 'erro');
+          toastAlerta("Erro ao atualizar o Serviço", "erro");
         }
       }
     } else {
@@ -124,26 +123,28 @@ function FormularioServico() {
           },
         });
 
-        toastAlerta('Serviço cadastrado com sucesso', 'sucesso');
+        toastAlerta("Serviço cadastrado com sucesso", "sucesso");
         retornar();
       } catch (error: any) {
-        if (error.toString().includes('403')) {
-          toastAlerta('O token expirou, favor logar novamente', 'info')
-          handleLogout()
+        if (error.toString().includes("403")) {
+          toastAlerta("O token expirou, favor logar novamente", "info");
+          handleLogout();
         } else {
-          toastAlerta('Erro ao cadastrar o Serviço', 'erro');
+          toastAlerta("Erro ao cadastrar o Serviço", "erro");
         }
       }
     }
   }
 
-  const carregandoCategoria = categoria.nome === '';
+  const carregandoCategoria = categoria.nome === "";
 
   return (
-    <div className="container flex flex-col mx-auto items-center">
-      <h1 className="text-4xl text-center my-8">{id !== undefined ? 'Editar Serviço' : 'Cadastrar Serviço'}</h1>
+    <div className="container flex flex-col mx-auto items-center bg-white rounded-lg p-10 shadow-custom" style={{ backgroundImage: `url(${Background})`, backgroundSize: 'cover' }}>
+      <h1 className="text-4xl text-center my-7">
+        {id !== undefined ? "Editar Serviço" : "Cadastrar Serviço"}
+      </h1>
 
-      <form onSubmit={gerarNovoServico} className="flex flex-col w-1/2 gap-4">
+      <form onSubmit={gerarNovoServico} className="flex-col w-2/6 gap-6 items-center p-4">
         <div className="flex flex-col gap-2">
           <label htmlFor="titulo">Nome do serviço</label>
           <input
@@ -153,10 +154,18 @@ function FormularioServico() {
             placeholder="Nome"
             name="nome"
             required
-            className="border-2 border-slate-700 rounded p-2"
+            className="border-2
+                  hover:border-purple-500
+                  focus:border-purple-600
+                  border-gray-500
+                  disabled:border-gray-300
+                  disabled:bg-gray-200
+                  rounded-lg
+                  mb-2
+                "
           />
         </div>
-        <div className="flex flex-col gap-2">
+        <div className="flex flex-col gap-2 ">
           <label htmlFor="titulo">Agendamento</label>
           <input
             value={servico.agendamento}
@@ -165,7 +174,15 @@ function FormularioServico() {
             placeholder="Agendamento"
             name="agendamento"
             required
-            className="border-2 border-slate-700 rounded p-2"
+            className=" border-2
+                  hover:border-purple-500
+                  focus:border-purple-600
+                  border-gray-500
+                  disabled:border-gray-300
+                  disabled:bg-gray-200
+                  rounded-lg
+                  mb-2
+                "
           />
         </div>
         <div className="flex flex-col gap-2">
@@ -177,7 +194,15 @@ function FormularioServico() {
             placeholder="R$"
             name="valor"
             required
-            className="border-2 border-slate-700 rounded p-2"
+            className=" border-2
+                  hover:border-purple-500
+                  focus:border-purple-600
+                  border-gray-500
+                  disabled:border-gray-300
+                  disabled:bg-gray-200
+                  rounded-lg
+                  mb-2
+                "
           />
         </div>
         <div className="flex flex-col gap-2">
@@ -189,7 +214,15 @@ function FormularioServico() {
             placeholder="Descrição"
             name="descricao"
             required
-            className="border-2 border-slate-700 rounded p-2"
+            className=" border-2
+                  hover:border-purple-500
+                  focus:border-purple-600
+                  border-gray-500
+                  disabled:border-gray-300
+                  disabled:bg-gray-200
+                  rounded-lg
+                  mb-2
+                "
           />
         </div>
         <div className="flex flex-col gap-2">
@@ -201,20 +234,57 @@ function FormularioServico() {
             placeholder="Foto"
             name="foto"
             required
-            className="border-2 border-slate-700 rounded p-2"
+            className=" border-2
+                  hover:border-purple-500
+                  focus:border-purple-600
+                  border-gray-500
+                  disabled:border-gray-300
+                  disabled:bg-gray-200
+                  rounded-lg
+                  mb-2
+                "
           />
         </div>
         <div className="flex flex-col gap-2">
           <p>Categoria do Serviço</p>
-          <select name="categoria" id="categoria" className='border p-2 border-slate-800 rounded' onChange={(e) => buscarCategoriaPorId(e.currentTarget.value)}>
-            <option value="" selected disabled>Selecione um categoria</option>
+          <select
+            name="categoria"
+            id="categoria"
+            className=" border-2
+                  hover:border-purple-500
+                  focus:border-purple-600
+                  border-gray-500
+                  disabled:border-gray-300
+                  disabled:bg-gray-200
+                  rounded-lg
+                "
+            onChange={(e) => buscarCategoriaPorId(e.currentTarget.value)}
+          >
+            <option value="" selected disabled>
+              Selecione um categoria
+            </option>
             {categorias.map((categoria) => (
-                <option value={categoria.id} >{categoria.nome}</option>
+              <option value={categoria.id}>{categoria.nome}</option>
             ))}
           </select>
         </div>
-        <button disabled={carregandoCategoria} type='submit' className='rounded disabled:bg-slate-200 bg-indigo-400 hover:bg-indigo-800 text-white font-bold w-1/2 mx-auto block py-2'>
-          {carregandoCategoria ? <span>Carregando</span> : id !== undefined ? 'Editar' : 'Cadastrar'}
+        <button
+          disabled={carregandoCategoria}
+          type="submit"
+          className="
+                mt-3 py-3
+                flex items-center justify-center
+                text-white font-light tracking-wider
+                bg-purple-600 hover:bg-purple-500 rounded
+                disabled:bg-gray-300  w-1/2"
+        >
+          {carregandoCategoria ? (
+            <span>Carregando</span>
+          ) : id !== undefined ? (
+            "Editar"
+          ) : (
+            "Cadastrar"
+          )}
         </button>
       </form>
     </div>

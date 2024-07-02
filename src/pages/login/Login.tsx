@@ -32,7 +32,7 @@ function Login() {
   }, [usuario, navigate]);
 
   return (
-    <div className="p-14 w-full container mx-auto flex items-center justify-center ">
+    <div className="p-14 w-full container mx-auto flex items-center justify-center">
       <div className="flex items-center justify-between gap-20 flex-wrap lg:flex-nowrap w-full">
         <div className="justify-center hidden lg:flex">
           <img src={loginImage} className="w-2/3" alt="Sample image" />
@@ -105,8 +105,7 @@ function Login() {
                 flex items-center justify-center
                 text-white font-light tracking-wider
                 bg-purple-600 hover:bg-purple-500 rounded
-                disabled:bg-gray-300
-              ">
+                disabled:bg-gray-300">
               {isLoading ? (
                 <RotatingLines
                   strokeColor="white"

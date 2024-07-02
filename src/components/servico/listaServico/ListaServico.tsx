@@ -4,14 +4,15 @@ import { buscar } from '../../../services/Service';
 import { toastAlerta } from '../../../utils/toastAlerta';
 import CardServico from '../cardServico/CardServico';
 import Servicos from '../../../models/Servicos';
-import Skeleton from 'react-loading-skeleton';
+import Background from "../../../assets/backgroundListaServicos.png";
+import CardServicoSemLogin from '../cardServico/CardServicoSemLogin';
 import { ServiceSkeletons } from './Skeletons';
 
 function ListaServico() {
   const [servico, setServico] = useState<Servicos[]>([]);
 
 
-  const { handleLogout } = useContext(AuthContext);
+  const { handleLogout,usuario } = useContext(AuthContext);
 
   const buscarServico = useCallback(async () => {
     try {
@@ -32,13 +33,30 @@ function ListaServico() {
 
   const showSkeletons = servico.length === 0
 
+  let cardComponent
+
+  if (usuario.token !== "") {
+    cardComponent = (
+      <div className='container mx-auto my-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-14 p-14'>
+      {servico.map((servico) => (
+        <CardServico key={servico.id} post={servico} />
+      ))}
+      </div>
+    )
+  } else {
+    cardComponent = (
+      <div className='container mx-auto my-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-14 p-14'>
+      {servico.map((servico) => (
+        <CardServicoSemLogin key={servico.id} post={servico} />
+      ))}
+      </div>
+    )
+  }
   return (
     <>
+    <div style={{ backgroundImage: `url(${Background})`, backgroundSize: 'cover' }}>
       <ServiceSkeletons isVisible={showSkeletons} />
-      <div className="my-14 container md:px-20 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-        {servico.map((servico) => (
-          <CardServico key={servico.id} post={servico} />
-        ))}
+        {cardComponent}
       </div>
     </>
   );

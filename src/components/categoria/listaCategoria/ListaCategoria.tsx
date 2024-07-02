@@ -6,7 +6,6 @@ import { buscar } from '../../../services/Service';
 import { toastAlerta } from '../../../utils/toastAlerta';
 import Categorias from '../../../models/Categorias';
 import CardCategoria from '../cardCategoria/CardCategoria';
-import Skeleton from 'react-loading-skeleton';
 import { ServiceSkeletons } from '../../servico/listaServico/Skeletons';
 
 function ListaCategoria() {
