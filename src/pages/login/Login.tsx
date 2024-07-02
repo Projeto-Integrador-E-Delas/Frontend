@@ -32,10 +32,10 @@ function Login() {
   }, [usuario, navigate]);
 
   return (
-    <div className="w-full container mx-auto my-12 flex items-center justify-center">
+    <div className="p-14 w-full container mx-auto flex items-center justify-center ">
       <div className="flex items-center justify-between gap-20 flex-wrap lg:flex-nowrap w-full">
-        <div className="hidden lg:flex">
-          <img src={loginImage} className="w-3/2" alt="Sample image" />
+        <div className="justify-center hidden lg:flex">
+          <img src={loginImage} className="w-2/3" alt="Sample image" />
         </div>
         <form
             className="w-full lg:w-[800px] flex flex-col gap-4 max-w-lg p-10 rounded-lg shadow-2xl"
