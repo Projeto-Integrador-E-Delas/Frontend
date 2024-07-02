@@ -5,12 +5,13 @@ import { buscar } from '../../../services/Service';
 import { toastAlerta } from '../../../utils/toastAlerta';
 import CardServico from '../cardServico/CardServico';
 import Servicos from '../../../models/Servicos';
+import CardServicoSemLogin from '../cardServico/CardServicoSemLogin';
 
 function ListaServico() {
   const [servico, setServico] = useState<Servicos[]>([]);
 
 
-  const { handleLogout } = useContext(AuthContext);
+  const {usuario, handleLogout } = useContext(AuthContext);
 
   const buscarServico = useCallback(async () => {
     try {
@@ -27,6 +28,27 @@ function ListaServico() {
     buscarServico()
   }, [servico, buscarServico]);
 
+  let cardComponent
+
+  if (usuario.token !== "") {
+    cardComponent = (
+      <div className='container mx-auto my-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
+      {servico.map((servico) => (
+        <CardServico key={servico.id} post={servico} />
+      ))}
+      </div>
+    )
+  } else {
+    cardComponent = (
+      <div className='container mx-auto my-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
+      {servico.map((servico) => (
+        <CardServicoSemLogin key={servico.id} post={servico} />
+      ))}
+      </div>
+    )
+  }
+  
+
   return (
     <>
       {servico.length === 0 && (
@@ -39,11 +61,9 @@ function ListaServico() {
           wrapperClass="dna-wrapper mx-auto"
         />
       )}
-      <div className="my-14 container md:px-20 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-        {servico.map((servico) => (
-          <CardServico key={servico.id} post={servico} />
-        ))}
-      </div>
+
+      {cardComponent}
+      
     </>
   );
 }
