@@ -1,10 +1,11 @@
 import { useCallback, useContext, useEffect, useState } from 'react';
-import { Dna } from 'react-loader-spinner';
 import { AuthContext } from '../../../contexts/AuthContext';
 import { buscar } from '../../../services/Service';
 import { toastAlerta } from '../../../utils/toastAlerta';
 import CardServico from '../cardServico/CardServico';
 import Servicos from '../../../models/Servicos';
+import Skeleton from 'react-loading-skeleton';
+import { ServiceSkeletons } from './Skeletons';
 
 function ListaServico() {
   const [servico, setServico] = useState<Servicos[]>([]);
@@ -14,7 +15,9 @@ function ListaServico() {
 
   const buscarServico = useCallback(async () => {
     try {
-      await buscar('/servico', setServico, {});
+      setTimeout(async () => {
+        await buscar('/servico', setServico, {});
+      }, 2000)
     } catch (error: any) {
       if (error.toString().includes('403')) {
         toastAlerta('O token expirou, favor logar novamente', 'info')
@@ -27,18 +30,11 @@ function ListaServico() {
     buscarServico()
   }, [servico, buscarServico]);
 
+  const showSkeletons = servico.length === 0
+
   return (
     <>
-      {servico.length === 0 && (
-        <Dna
-          visible={true}
-          height="200"
-          width="200"
-          ariaLabel="dna-loading"
-          wrapperStyle={{}}
-          wrapperClass="dna-wrapper mx-auto"
-        />
-      )}
+      <ServiceSkeletons isVisible={showSkeletons} />
       <div className="my-14 container md:px-20 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
         {servico.map((servico) => (
           <CardServico key={servico.id} post={servico} />

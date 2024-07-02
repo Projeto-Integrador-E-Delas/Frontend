@@ -1,11 +1,13 @@
 import { useContext, useEffect, useState } from 'react';
-import { Dna } from 'react-loader-spinner';
+
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../contexts/AuthContext';
 import { buscar } from '../../../services/Service';
 import { toastAlerta } from '../../../utils/toastAlerta';
 import Categorias from '../../../models/Categorias';
 import CardCategoria from '../cardCategoria/CardCategoria';
+import Skeleton from 'react-loading-skeleton';
+import { ServiceSkeletons } from '../../servico/listaServico/Skeletons';
 
 function ListaCategoria() {
   const [categoria, setCategoria] = useState<Categorias[]>([]);
@@ -38,18 +40,12 @@ function ListaCategoria() {
   useEffect(() => {
     buscarCategorias();
   }, [categoria.length]);
+
+  const showSkeletons = categoria.length === 0
+
   return (
     <>
-      {categoria.length === 0 && (
-        <Dna
-          visible={true}
-          height="200"
-          width="200"
-          ariaLabel="dna-loading"
-          wrapperStyle={{}}
-          wrapperClass="dna-wrapper mx-auto"
-        />
-      )}
+      <ServiceSkeletons isVisible={showSkeletons} />
       <div className="flex justify-center w-full my-4">
         <div className="container flex flex-col">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
