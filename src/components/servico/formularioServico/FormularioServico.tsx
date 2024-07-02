@@ -5,7 +5,7 @@ import { buscar, atualizar, cadastrar } from "../../../services/Service";
 import { toastAlerta } from "../../../utils/toastAlerta";
 import Categorias from "../../../models/Categorias";
 import Servicos from "../../../models/Servicos";
-import Background from "../../../assets/backgroundFormularioServicos.png";
+import Background from "../../../assets/backgorundCadastro.png";
 
 function FormularioServico() {
   let navigate = useNavigate();
@@ -139,154 +139,173 @@ function FormularioServico() {
   const carregandoCategoria = categoria.nome === "";
 
   return (
-    <div className="container flex flex-col mx-auto items-center bg-white rounded-lg p-10 shadow-custom" style={{ backgroundImage: `url(${Background})`, backgroundSize: 'cover' }}>
-      <h1 className="text-4xl text-center my-7">
-        {id !== undefined ? "Editar Serviço" : "Cadastrar Serviço"}
-      </h1>
+    <div
+      className="container flex flex-col mx-auto items-center bg-white rounded-lg p-10 shadow-custom"
+      style={{ backgroundImage: `url(${Background})`, backgroundSize: "cover" }}
+    >
+      <div className="flex justify-center flex-col w-2/5 gap-3 m-auto bg-white bg-opacity-50 rounded shadow-2xl p-6 ">
+        <h1 className="text-4xl text-center my-4">
+          {id !== undefined ? "Editar Serviço" : "Cadastrar Serviço"}
+        </h1>
 
-      <form onSubmit={gerarNovoServico} className="flex-col w-2/6 gap-6 items-center p-4">
-        <div className="flex flex-col gap-2">
-          <label htmlFor="titulo">Nome do serviço</label>
-          <input
-            value={servico.nome}
-            onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-            type="text"
-            placeholder="Nome"
-            name="nome"
-            required
-            className="border-2
+        <form
+          onSubmit={gerarNovoServico}
+          className="flex-col gap-6 items-center p-4"
+        >
+          <div className="flex flex-col gap-2">
+            <label htmlFor="titulo">Nome do serviço</label>
+            <input
+              value={servico.nome}
+              onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                atualizarEstado(e)
+              }
+              type="text"
+              placeholder="Nome"
+              name="nome"
+              required
+              className="border-2
                   hover:border-purple-500
                   focus:border-purple-600
                   border-gray-500
                   disabled:border-gray-300
                   disabled:bg-gray-200
                   rounded-lg
-                  mb-2
+                  mb-4
                 "
-          />
-        </div>
-        <div className="flex flex-col gap-2 ">
-          <label htmlFor="titulo">Agendamento</label>
-          <input
-            value={servico.agendamento}
-            onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-            type="text"
-            placeholder="Agendamento"
-            name="agendamento"
-            required
-            className=" border-2
+            />
+          </div>
+          <div className="flex flex-col gap-2 ">
+            <label htmlFor="titulo">Agendamento</label>
+            <input
+              value={servico.agendamento}
+              onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                atualizarEstado(e)
+              }
+              type="text"
+              placeholder="Agendamento"
+              name="agendamento"
+              required
+              className=" border-2
                   hover:border-purple-500
                   focus:border-purple-600
                   border-gray-500
                   disabled:border-gray-300
                   disabled:bg-gray-200
                   rounded-lg
-                  mb-2
+                  mb-4
                 "
-          />
-        </div>
-        <div className="flex flex-col gap-2">
-          <label htmlFor="titulo">Valor do serviço</label>
-          <input
-            value={servico.valor}
-            onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-            type="number"
-            placeholder="R$"
-            name="valor"
-            required
-            className=" border-2
+            />
+          </div>
+          <div className="flex flex-col gap-2">
+            <label htmlFor="titulo">Valor do serviço</label>
+            <input
+              value={servico.valor}
+              onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                atualizarEstado(e)
+              }
+              type="number"
+              placeholder="R$"
+              name="valor"
+              required
+              className=" border-2
                   hover:border-purple-500
                   focus:border-purple-600
                   border-gray-500
                   disabled:border-gray-300
                   disabled:bg-gray-200
                   rounded-lg
-                  mb-2
+                  mb-4
                 "
-          />
-        </div>
-        <div className="flex flex-col gap-2">
-          <label htmlFor="titulo">Descrição do Serviço</label>
-          <input
-            value={servico.descricao}
-            onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-            type="text"
-            placeholder="Descrição"
-            name="descricao"
-            required
-            className=" border-2
+            />
+          </div>
+          <div className="flex flex-col gap-2">
+            <label htmlFor="titulo">Descrição do Serviço</label>
+            <input
+              value={servico.descricao}
+              onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                atualizarEstado(e)
+              }
+              type="text"
+              placeholder="Descrição"
+              name="descricao"
+              required
+              className=" border-2
                   hover:border-purple-500
                   focus:border-purple-600
                   border-gray-500
                   disabled:border-gray-300
                   disabled:bg-gray-200
                   rounded-lg
-                  mb-2
+                  mb-4
                 "
-          />
-        </div>
-        <div className="flex flex-col gap-2">
-          <label htmlFor="titulo">Foto</label>
-          <input
-            value={servico.foto}
-            onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-            type="text"
-            placeholder="Foto"
-            name="foto"
-            required
-            className=" border-2
+            />
+          </div>
+          <div className="flex flex-col gap-2">
+            <label htmlFor="titulo">Foto</label>
+            <input
+              value={servico.foto}
+              onChange={(e: ChangeEvent<HTMLInputElement>) =>
+                atualizarEstado(e)
+              }
+              type="text"
+              placeholder="Foto"
+              name="foto"
+              required
+              className=" border-2
                   hover:border-purple-500
                   focus:border-purple-600
                   border-gray-500
                   disabled:border-gray-300
                   disabled:bg-gray-200
                   rounded-lg
-                  mb-2
+                  mb-4
                 "
-          />
-        </div>
-        <div className="flex flex-col gap-2">
-          <p>Categoria do Serviço</p>
-          <select
-            name="categoria"
-            id="categoria"
-            className=" border-2
+            />
+          </div>
+          <div className="flex flex-col gap-2">
+            <p>Categoria do Serviço</p>
+            <select
+              name="categoria"
+              id="categoria"
+              className=" border-2
                   hover:border-purple-500
                   focus:border-purple-600
                   border-gray-500
                   disabled:border-gray-300
                   disabled:bg-gray-200
                   rounded-lg
+                  mb-4
                 "
-            onChange={(e) => buscarCategoriaPorId(e.currentTarget.value)}
-          >
-            <option value="" selected disabled>
-              Selecione um categoria
-            </option>
-            {categorias.map((categoria) => (
-              <option value={categoria.id}>{categoria.nome}</option>
-            ))}
-          </select>
-        </div>
-        <button
-          disabled={carregandoCategoria}
-          type="submit"
-          className="
+              onChange={(e) => buscarCategoriaPorId(e.currentTarget.value)}
+            >
+              <option value="" selected disabled>
+                Selecione um categoria
+              </option>
+              {categorias.map((categoria) => (
+                <option value={categoria.id}>{categoria.nome}</option>
+              ))}
+            </select>
+          </div>
+          <button
+            disabled={carregandoCategoria}
+            type="submit"
+            className="
                 mt-3 py-3
                 flex items-center justify-center
                 text-white font-light tracking-wider
                 bg-purple-600 hover:bg-purple-500 rounded
-                disabled:bg-gray-300  w-1/2"
-        >
-          {carregandoCategoria ? (
-            <span>Carregando</span>
-          ) : id !== undefined ? (
-            "Editar"
-          ) : (
-            "Cadastrar"
-          )}
-        </button>
-      </form>
+                disabled:bg-gray-300 w-4/5"
+          >
+            {carregandoCategoria ? (
+              <span>Carregando</span>
+            ) : id !== undefined ? (
+              "Editar"
+            ) : (
+              "Cadastrar"
+            )}
+          </button>
+        </form>
+      </div>
     </div>
   );
 }

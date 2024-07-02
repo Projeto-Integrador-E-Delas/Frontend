@@ -4,6 +4,7 @@ import { AuthContext } from '../../../contexts/AuthContext';
 import { atualizar, buscar, cadastrar } from '../../../services/Service';
 import { toastAlerta } from '../../../utils/toastAlerta';
 import Categorias from '../../../models/Categorias';
+import Background from "../../../assets/backgorundCadastro.png";
 
 function FormularioCategoria() {
   const [categoria, setCategoria] = useState<Categorias>({} as Categorias);
@@ -97,13 +98,14 @@ function FormularioCategoria() {
   }, [token]);
 
   return (
-    <div className="container flex flex-col items-center justify-center mx-auto">
-      <h1 className="text-4xl text-center my-8">
-        {id === undefined ? 'Cadastre uma nova categoria' : 'Editar Categoria'}
+    <div className="container flex flex-col mx-auto items-center bg-white rounded-lg p-20" style={{ backgroundImage: `url(${Background})`, backgroundSize: 'cover' }}>
+    <div className="flex flex-col items-center w-2/4 gap-3 m-auto bg-white bg-opacity-50 rounded shadow-2xl p-14">
+      <h1 className="text-4xl text-center my-4">
+        {id === undefined ? 'Cadastro de categoria' : 'Editar Categoria'}
       </h1>
 
-      <form className="w-1/2 flex flex-col gap-4" onSubmit={gerarNovaCategoria}>
-        <div className="flex flex-col gap-2">
+      <form className="w-1/2 flex flex-col  gap-4" onSubmit={gerarNovaCategoria}>
+        <div className="flex flex-col justify-center gap-2">
           <label htmlFor="nome">Nome da Categoria</label>
           <input
             type="text"
@@ -146,6 +148,7 @@ function FormularioCategoria() {
           {id === undefined ? 'Cadastrar' : 'Editar'}
         </button>
       </form>
+    </div>
     </div>
   );
 }
