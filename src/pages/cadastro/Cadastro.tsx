@@ -30,7 +30,7 @@ function Cadastro() {
   }, [usuario])
 
   function retornar() {
-    navigate('/usuario/logar')
+    navigate('/logar')
   }
 
   function handleConfirmarSenha(e: ChangeEvent<HTMLInputElement>) {
