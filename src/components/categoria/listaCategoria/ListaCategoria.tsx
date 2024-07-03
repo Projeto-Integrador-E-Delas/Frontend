@@ -43,18 +43,21 @@ function ListaCategoria() {
   const showSkeletons = categoria.length === 0
 
   return (
-    <>
+    <div className='container mx-auto py-10 px-20'>
       <ServiceSkeletons isVisible={showSkeletons} />
-      <div className="flex justify-center w-full my-4">
-        <div className="container flex flex-col">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {categoria.map((categoria) => (
-              <CardCategoria key={categoria.id} categoria={categoria} />
-            ))}
-          </div>
+      <div className="flex flex-col gap-10">
+        {categoria.length > 0 && (
+          <h1 className="font-semibold text-xl">
+            {categoria.length} Categorias cadastradas
+          </h1>
+        )}
+        <div className="gap-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+          {categoria.map((categoria) => (
+            <CardCategoria key={categoria.id} categoria={categoria} />
+          ))}
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

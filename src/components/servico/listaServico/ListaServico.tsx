@@ -39,7 +39,7 @@ function ListaServico() {
       <div className="flex flex-col gap-10">
         {servico.length > 0 && (
           <h1 className="font-semibold text-xl">
-            {servico.length} Serviços disponíveis
+            {servico.length} Serviços cadastrados
           </h1>
         )}
         <div className="gap-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
