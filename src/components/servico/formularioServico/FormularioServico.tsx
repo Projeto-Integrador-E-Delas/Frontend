@@ -144,13 +144,13 @@ function FormularioServico() {
       style={{ backgroundImage: `url(${Background})`, backgroundSize: "cover" }}
     >
       <div className="flex justify-center flex-col w-2/5 gap-3 m-auto bg-white rounded shadow-2xl p-6 ">
-        <h1 className="text-4xl text-center my-4">
+        <h1 className="text-2xl font-semibold text-center my-4">
           {id !== undefined ? "Editar Serviço" : "Cadastrar Serviço"}
         </h1>
 
         <form
           onSubmit={gerarNovoServico}
-          className="flex-col gap-6 items-center p-4"
+          className="flex-col gap-6 items-center"
         >
           <div className="flex flex-col gap-2">
             <label htmlFor="titulo">Nome do serviço</label>
@@ -197,7 +197,7 @@ function FormularioServico() {
             />
           </div>
           <div className="flex flex-col gap-2">
-            <label htmlFor="titulo">Valor do serviço</label>
+            <label htmlFor="titulo">Valor do serviço (hora)</label>
             <input
               value={servico.valor}
               onChange={(e: ChangeEvent<HTMLInputElement>) =>
@@ -290,16 +290,17 @@ function FormularioServico() {
             disabled={carregandoCategoria}
             type="submit"
             className="
-                mt-3 py-3
-                flex items-center justify-center
-                text-white font-light tracking-wider
-                bg-purple-600 hover:bg-purple-500 rounded
-                disabled:bg-gray-300 w-4/5"
+              w-full
+              mt-3 py-3
+              flex items-center justify-center
+              text-white font-light tracking-wider
+              bg-purple-600 hover:bg-purple-500 rounded
+              disabled:bg-gray-300"
           >
             {carregandoCategoria ? (
               <span>Carregando</span>
             ) : id !== undefined ? (
-              "Editar"
+              "Salvar alterações"
             ) : (
               "Cadastrar"
             )}

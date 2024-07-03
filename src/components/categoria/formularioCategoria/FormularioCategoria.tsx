@@ -98,51 +98,65 @@ function FormularioCategoria() {
   }, [token]);
 
   return (
-    <div className="container flex flex-col mx-auto items-center bg-white rounded-lg p-20" style={{ backgroundImage: `url(${Background})`, backgroundSize: 'cover' }}>
-    <div className="flex flex-col items-center w-2/4 gap-3 m-auto bg-white rounded shadow-2xl p-14">
-      <h1 className="text-4xl text-center my-4">
-        {id === undefined ? 'Cadastro de categoria' : 'Editar Categoria'}
-      </h1>
+    <div
+      className="container flex flex-col mx-auto items-center bg-white rounded-lg p-10 shadow-custom"
+      style={{ backgroundImage: `url(${Background})`, backgroundSize: "cover" }}
+    >
+      <div className="flex justify-center flex-col w-2/5 gap-3 m-auto bg-white rounded shadow-2xl p-6 ">
+        <h1 className="text-2xl font-semibold text-center my-4">
+          {id !== undefined ? "Editar Categoria" : "Cadastrar Categoria"}
+        </h1>
 
-      <form className="w-1/2 flex flex-col  gap-4" onSubmit={gerarNovaCategoria}>
-        <div className="flex flex-col justify-center gap-2">
-          <label htmlFor="nome">Nome da Categoria</label>
-          <input
-            type="text"
-            placeholder="nome"
-            name='nome'
-            className="border-2 border-slate-700 rounded p-2"
-            value={categoria.nome}
-            onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-          />
-        </div>
-
-        {/* <div className="flex flex-col gap-2">
-          <label htmlFor="titulo">Foto</label>
-          <input
-            value={servico.foto}
-            onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-            type="text"
-            placeholder="Foto"
-            name="foto"
-            required
-            className="border-2 border-slate-700 rounded p-2"
-          />
-        </div> */}
-
-        <div className="flex flex-col gap-2">
-          <label htmlFor="icone">Icone da Categoria</label>
-          <input
-            type="text"
-            placeholder="icone"
-            name="icone"
-            className="border-2 border-slate-700 rounded p-2"
-            value={categoria.icone}
-            onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
-          />
-        </div>
+      <form className="flex flex-col items-center" onSubmit={gerarNovaCategoria}>
+          <div className="w-full flex flex-col gap-2">
+            <label htmlFor="titulo">Nome da Categoria</label>
+            <input
+              value={categoria.nome}
+              onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+              type="text"
+              placeholder="Nome"
+              name="nome"
+              required
+              className="border-2
+                  hover:border-purple-500
+                  focus:border-purple-600
+                  border-gray-500
+                  disabled:border-gray-300
+                  disabled:bg-gray-200
+                  rounded-lg
+                  mb-4
+                "
+            />
+          </div>
+          <div className="w-full flex flex-col gap-2">
+            <label htmlFor="titulo">URL do ícone</label>
+            <input
+              value={categoria.icone}
+              onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
+              type="text"
+              placeholder="Nome"
+              name="nome"
+              required
+              className="border-2
+                  hover:border-purple-500
+                  focus:border-purple-600
+                  border-gray-500
+                  disabled:border-gray-300
+                  disabled:bg-gray-200
+                  rounded-lg
+                  mb-4
+                "
+            />
+          </div>
         <button
-          className="rounded text-slate-100 bg-purple-500 hover:bg-purple-600 w-1/2 py-2 mx-auto block"
+          className="
+            w-full
+            mt-3 py-3
+            flex items-center justify-center
+            text-white font-light tracking-wider
+            bg-purple-600 hover:bg-purple-500 rounded
+            disabled:bg-gray-300
+          "
           type="submit"
         >
           {id === undefined ? 'Cadastrar' : 'Editar'}

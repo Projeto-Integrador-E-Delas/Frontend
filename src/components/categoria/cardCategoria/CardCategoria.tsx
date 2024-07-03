@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import Categorias from '../../../models/Categorias'
+import FeatherIcon from 'feather-icons-react'
 
 
 interface CardCategoriaProps {
@@ -8,16 +9,46 @@ interface CardCategoriaProps {
 
 function CardCategoria({categoria}: CardCategoriaProps) {
   return (
-    <div className='border flex flex-col rounded-2xl overflow-hidden'>
-      <header className='py-3 px-6 bg-purple-600 text-white font-bold text-2xl text-center'>{categoria.nome}</header>
-      <img src={categoria.icone} className='self-center' width={"200"}/>
-      <div className="flex">
-        <Link to={`/editarCategoria/${categoria.id}`} className='w-full text-white font-light tracking-wider bg-purple-800 hover:bg-purple-600 flex items-center justify-center py-2'>
-          <button>Editar</button>
-        </Link>
-        <Link to={`/deletarCategoria/${categoria.id}`} className='text-slate-100 bg-red-600 hover:bg-red-400 w-full flex items-center justify-center'>
-          <button>Deletar</button>
-        </Link>
+    <div className="rounded-lg transform transition duration-300">
+      <figure className="mb-2">
+        <div
+          className="bg-auto h-40 rounded-md bg-no-repeat bg-center"
+          style={{
+            background: `url('${categoria.icone}') center center`,
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "contain",
+          }}
+        ></div>
+        {/* <img src={post.foto} alt="" className="h-64 w-full rounded-lg bg-cover" /> */}
+      </figure>
+      <div className="rounded-lg flex flex-col gap-1">
+        <h5 className="text-xl text-purple-700 font-bold line-clamp-1">
+          {categoria.nome}
+        </h5>
+        <div className="flex gap-2">
+        <div className="flex items-center gap-2 mt-3">
+          <Link to={`/editarCategoria/${categoria.id}`}>
+            <button
+              type="button"
+              className="text-white gap-2 bg-purple-600 hover:bg-purple-700 focus:ring-4 focus:outline-none focus:ring-purple-300  font-medium rounded-lg text-sm px-6 py-2.5 text-center inline-flex items-center"
+            >
+              <FeatherIcon icon="edit" />
+              Editar
+            </button>
+          </Link>
+        </div>
+        <div className="justify-end gap-2 mt-3">
+        <Link to={`/deletarCategoria/${categoria.id}`}>
+            <button
+              type="button"
+              className="text-white gap-2 bg-red-600 hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-6 py-2.5 text-center inline-flex items-center"
+            >
+              <FeatherIcon icon="trash" />
+              Excluir
+            </button>
+          </Link>
+        </div>
+        </div>
       </div>
     </div>
   )
