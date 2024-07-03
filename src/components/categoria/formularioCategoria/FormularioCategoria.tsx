@@ -108,17 +108,17 @@ function FormularioCategoria() {
     >
       <div className="flex justify-center flex-col w-2/5 gap-3 m-auto bg-white rounded shadow-2xl p-6 ">
         <h1 className="text-2xl font-semibold text-center my-4">
-          {id !== undefined ? "Editar Categoria" : "Cadastrar Categoria"}
+          {id !== undefined ? "Editar categoria" : "Cadastrar categoria"}
         </h1>
 
       <form className="flex flex-col items-center" onSubmit={gerarNovaCategoria}>
           <div className="w-full flex flex-col gap-2">
-            <label htmlFor="titulo">Nome da Categoria</label>
+            <label htmlFor="titulo">Nome da categoria</label>
             <input
               value={categoria.nome}
               onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
               type="text"
-              placeholder="Nome"
+              placeholder="Saúde e bem-estar"
               name="nome"
               required
               className="border-2
@@ -138,7 +138,7 @@ function FormularioCategoria() {
               value={categoria.icone}
               onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
               type="text"
-              placeholder="Nome"
+              placeholder="Insira a URL"
               name="nome"
               required
               className="border-2
