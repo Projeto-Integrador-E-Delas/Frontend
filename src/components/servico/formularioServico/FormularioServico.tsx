@@ -150,7 +150,7 @@ function FormularioServico() {
     >
       <div className="flex justify-center flex-col w-2/5 gap-3 m-auto bg-white rounded shadow-2xl p-6 ">
         <h1 className="text-2xl font-semibold text-center my-4">
-          {id !== undefined ? "Editar Serviço" : "Cadastrar Serviço"}
+          {id !== undefined ? "Editar Serviço" : "Cadastre seu serviço"}
         </h1>
 
         <form
@@ -165,7 +165,7 @@ function FormularioServico() {
                 atualizarEstado(e)
               }
               type="text"
-              placeholder="Nome"
+              placeholder="Confeiteira"
               name="nome"
               required
               className="border-2
@@ -180,15 +180,15 @@ function FormularioServico() {
             />
           </div>
           <div className="flex flex-col gap-2 ">
-            <label htmlFor="titulo">Agendamento</label>
+            <label htmlFor="titulo">Telefone</label>
             <input
               value={servico.agendamento}
               onChange={(e: ChangeEvent<HTMLInputElement>) =>
                 atualizarEstado(e)
               }
               type="text"
-              placeholder="Agendamento"
-              name="agendamento"
+              placeholder="+55 (00) 00000-0000"
+              name="Insira seu telefone"
               required
               className=" border-2
                   hover:border-purple-500
@@ -224,14 +224,14 @@ function FormularioServico() {
             />
           </div>
           <div className="flex flex-col gap-2">
-            <label htmlFor="titulo">Descrição do Serviço</label>
+            <label htmlFor="titulo">Descrição do serviço</label>
             <input
               value={servico.descricao}
               onChange={(e: ChangeEvent<HTMLInputElement>) =>
                 atualizarEstado(e)
               }
               type="text"
-              placeholder="Descrição"
+              placeholder="Bolos de aniversario artesanais..."
               name="descricao"
               required
               className=" border-2
@@ -253,7 +253,7 @@ function FormularioServico() {
                 atualizarEstado(e)
               }
               type="text"
-              placeholder="Foto"
+              placeholder="Insira o link da foto"
               name="foto"
               required
               className=" border-2
@@ -268,7 +268,7 @@ function FormularioServico() {
             />
           </div>
           <div className="flex flex-col gap-2">
-            <p>Categoria do Serviço</p>
+            <p>Categoria do serviço</p>
             <select
               name="categoria"
               id="categoria"

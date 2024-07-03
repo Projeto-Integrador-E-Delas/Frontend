@@ -42,6 +42,10 @@ function ListaCategoria() {
   }, [categoria.length]);
 
   const showSkeletons = categoria.length === 0
+  
+  useEffect(() => {
+    window.scrollTo(0, 0)
+    }, [])
 
   return (
     <div className='container mx-auto py-10 px-20'>

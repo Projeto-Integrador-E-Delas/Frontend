@@ -51,7 +51,7 @@ function Cadastro() {
 
       try {
         await cadastrarUsuario(`/usuarios/cadastrar`, usuario, setUsuario);
-        toastAlerta("Usuário cadastrado com sucesso", "sucesso");
+        toastAlerta("Boas vindas!", "sucesso");
       } catch (error) {
         toastAlerta("Erro ao cadastrar o Usuário", "erro");
       }
@@ -66,6 +66,10 @@ function Cadastro() {
 
     setIsLoading(false);
   }
+  
+  useEffect(() => {
+    window.scrollTo(0, 0)
+    }, [])
 
   return (
     <>
@@ -105,7 +109,7 @@ function Cadastro() {
               type="text"
               id="email"
               name="email"
-              placeholder="Email"
+              placeholder="Insira seu email"
               className="border-2
                   hover:border-purple-500
                   focus:border-purple-600

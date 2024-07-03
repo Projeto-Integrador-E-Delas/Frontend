@@ -36,7 +36,7 @@ export function AuthProvider({ children }: AuthProviderProps) {
         try {
 
             await login(`/usuarios/logar`, userLogin, setUsuario)
-            toastAlerta("Olá novamente!", 'sucesso')
+            toastAlerta("Olá! que bom te ver aqui", 'sucesso')
             setIsLoading(false)                                 
 
         } catch (error) {

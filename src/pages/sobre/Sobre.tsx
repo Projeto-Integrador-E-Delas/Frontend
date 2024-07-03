@@ -1,6 +1,12 @@
+import { useEffect } from "react";
 import img from "../../assets/woman.jpg";
 
 function Sobre() {
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+    }, [])
+
   return (
     <>
       <div className="container my-24 mx-auto md:px-6">

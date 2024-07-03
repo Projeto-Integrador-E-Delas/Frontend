@@ -62,7 +62,7 @@ function Login() {
                 type="text"
                 id="email"
                 name="email"
-                placeholder="Email"
+                placeholder="Insira seu email"
                 disabled={isLoading}
                 className="
                   border-2
@@ -85,7 +85,7 @@ function Login() {
                 type="password"
                 id="senha"
                 name="senha"
-                placeholder="Senha"
+                placeholder="Insira sua senha"
                 disabled={isLoading}
                 className="
                   border-2

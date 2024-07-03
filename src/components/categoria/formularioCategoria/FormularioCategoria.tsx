@@ -97,6 +97,10 @@ function FormularioCategoria() {
     }
   }, [token]);
 
+  useEffect(() => {
+    window.scrollTo(0, 0)
+    }, [])
+
   return (
     <div
       className="container flex flex-col mx-auto items-center bg-white rounded-lg p-10 shadow-custom"
