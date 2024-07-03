@@ -27,9 +27,14 @@ function Login() {
 
   useEffect(() => {
     if (usuario.token !== "") {
-      navigate("/home");
+      navigate("/servicos");
     }
   }, [usuario, navigate]);
+
+  
+  useEffect(() => {
+    window.scrollTo(0, 0)
+    }, [])
 
   return (
     <div className="p-14 w-full container mx-auto flex items-center justify-center">
