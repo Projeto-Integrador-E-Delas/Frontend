@@ -62,6 +62,11 @@ function DeletarServico() {
     }
 
     retornar();
+    
+    useEffect(() => {
+      window.scrollTo(0, 0)
+      }, [])
+  
   }
   return (
     <div
