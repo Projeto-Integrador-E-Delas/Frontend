@@ -99,7 +99,7 @@ function FormularioCategoria() {
 
   return (
     <div className="container flex flex-col mx-auto items-center bg-white rounded-lg p-20" style={{ backgroundImage: `url(${Background})`, backgroundSize: 'cover' }}>
-    <div className="flex flex-col items-center w-2/4 gap-3 m-auto bg-white bg-opacity-50 rounded shadow-2xl p-14">
+    <div className="flex flex-col items-center w-2/4 gap-3 m-auto bg-white rounded shadow-2xl p-14">
       <h1 className="text-4xl text-center my-4">
         {id === undefined ? 'Cadastro de categoria' : 'Editar Categoria'}
       </h1>

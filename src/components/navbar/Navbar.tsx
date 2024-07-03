@@ -11,7 +11,7 @@ function Navbar() {
 
   function logout() {
     handleLogout();
-    toastAlerta("Usuário deslogado com sucesso", "sucesso");
+    toastAlerta("Até mais!", "sucesso");
     navigate("/logar");
   }
 

@@ -2,6 +2,7 @@ import Categorias from "./Categorias";
 import Usuario from "./Usuario";
 
 export default interface Servicos {
+  login: any;
   id: number;
   nome: string;
   agendamento: string;

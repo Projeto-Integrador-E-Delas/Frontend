@@ -34,7 +34,7 @@ function CardServicoSemLogin({post}: CardServicoProps) {
         </div>
 
         <div className="flex gap-2 mt-3">
-          
+        <Link to={`/logar`}>
             <button
               type="button"
               className="text-white bg-purple-600 hover:bg-pruple-700 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium rounded-lg text-sm px-6 py-2.5 text-center inline-flex items-center dark:bg-purple-600 dark:hover:bg-purple-700 dark:focus:ring-purple-800"
@@ -50,6 +50,7 @@ function CardServicoSemLogin({post}: CardServicoProps) {
               </svg>
               Solicitar
             </button>
+            </Link>
         </div>
       </div>
     </div>
