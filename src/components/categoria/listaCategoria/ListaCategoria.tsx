@@ -7,6 +7,7 @@ import { toastAlerta } from '../../../utils/toastAlerta';
 import Categorias from '../../../models/Categorias';
 import CardCategoria from '../cardCategoria/CardCategoria';
 import { ServiceSkeletons } from '../../servico/listaServico/Skeletons';
+import { CategorySkeletons } from './Skeletons';
 
 function ListaCategoria() {
   const [categoria, setCategoria] = useState<Categorias[]>([]);
@@ -44,7 +45,7 @@ function ListaCategoria() {
 
   return (
     <div className='container mx-auto py-10 px-20'>
-      <ServiceSkeletons isVisible={showSkeletons} />
+      <CategorySkeletons isVisible={showSkeletons} />
       <div className="flex flex-col gap-10">
         {categoria.length > 0 && (
           <h1 className="font-semibold text-xl">
