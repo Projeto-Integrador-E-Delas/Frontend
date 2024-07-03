@@ -88,24 +88,24 @@ function Home() {
           className="w-full h-full bg-center bg-cover duration-500"
         ></div>
 
-        <div className="absolute top-[50%] -translate-x-0 translate-y-[-50%] left-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer">
+        <div className="absolute top-[50%] -translate-x-0 translate-y-[-50%] left-32 text-2xl rounded-full p-2 bg-purple-600 text-white cursor-pointer">
           <BsChevronCompactLeft onClick={prevSlide} size={30} />
         </div>
 
-        <div className="absolute top-[50%] -translate-x-0 translate-y-[-50%] right-5 text-2xl rounded-full p-2 bg-black/20 text-white cursor-pointer">
+        <div className="absolute top-[50%] -translate-x-0 translate-y-[-50%] right-32 text-2xl rounded-full p-2 bg-purple-600 text-white cursor-pointer">
           <BsChevronCompactRight onClick={nextSlide} size={30} />
         </div>
 
-        <div className="flex top-4 justify-center">
+        <div className="flex top-4 justify-center mt-2">
           {slides.map((slide, slideIndex) => (
             <div
               key={slideIndex}
               onClick={() => goToSlide(slideIndex)}
-              className="text-2xl cursor-pointer"
+              className="text-4xl cursor-pointer "
             >
               <RxDotFilled
                 className={`${
-                  slideIndex === currentIndex ? "text-white" : "text-gray-500"
+                  slideIndex === currentIndex ? "text-purple-400" : "text-purple-700"
                 }`}
               />
             </div>

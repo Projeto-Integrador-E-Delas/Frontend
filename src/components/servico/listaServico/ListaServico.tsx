@@ -37,7 +37,7 @@ function ListaServico() {
 
   if (usuario.token !== "") {
     cardComponent = (
-      <div className='container mx-auto my-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-14 p-14'>
+      <div className='container mx-auto my-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 p-20' >
       {servico.map((servico) => (
         <CardServico key={servico.id} post={servico} />
       ))}
@@ -45,7 +45,7 @@ function ListaServico() {
     )
   } else {
     cardComponent = (
-      <div className='container mx-auto my-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-14 p-14'>
+      <div className='container mx-auto my-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 p-20'>
       {servico.map((servico) => (
         <CardServicoSemLogin key={servico.id} post={servico} />
       ))}

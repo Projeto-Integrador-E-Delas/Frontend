@@ -23,7 +23,13 @@ function Navbar() {
         <div className="container px-4 flex justify-between items-center">
           <div className="text-base flex gap-6 justify-center items-center">
             <Link to="/home">
-              <img src={img} width={180} height={120} alt="Clickable Image" className="w-36" />
+              <img
+                src={img}
+                width={180}
+                height={120}
+                alt="Clickable Image"
+                className="w-36"
+              />
             </Link>
           </div>
 
@@ -37,22 +43,26 @@ function Navbar() {
 
             <Link
               to="/servicos"
-              className="text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-gray-300 md:p-0 dark:text-white md:dark:hover:text-purple-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparen"            >
+              className="text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-gray-300 md:p-0 dark:text-white md:dark:hover:text-purple-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparen"
+            >
               Serviços
             </Link>
             <Link
               to="/cadastrarServico"
-              className="text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-gray-300 md:p-0 dark:text-white md:dark:hover:text-purple-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparen"            >
+              className="text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-gray-300 md:p-0 dark:text-white md:dark:hover:text-purple-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparen"
+            >
               Cadastrar Serviços
             </Link>
             <Link
               to="/categorias"
-              className="text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-gray-300 md:p-0 dark:text-white md:dark:hover:text-purple-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparen"            >
+              className="text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-gray-300 md:p-0 dark:text-white md:dark:hover:text-purple-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparen"
+            >
               Categoria
             </Link>
             <Link
               to="/cadastrarCategoria"
-              className="text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-gray-300 md:p-0 dark:text-white md:dark:hover:text-purple-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparen"            >
+              className="text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-gray-300 md:p-0 dark:text-white md:dark:hover:text-purple-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparen"
+            >
               Cadastrar Categoria
             </Link>
           </div>
@@ -75,7 +85,13 @@ function Navbar() {
         <div className="container px-4 flex justify-between items-center">
           <div className="text-base flex gap-6 justify-center items-center">
             <Link to="/home">
-              <img src={img} width={180} height={120} alt="Clickable Image" className="w-36" />
+              <img
+                src={img}
+                width={180}
+                height={120}
+                alt="Clickable Image"
+                className="w-36"
+              />
             </Link>
             <Link
               to="/"
@@ -97,19 +113,20 @@ function Navbar() {
               Serviços
             </Link>
           </div>
-          
 
-          <div className="flex gap-5 justify-center items-center">
-            <Link to="/logar" className="hover:underline">
-              <button className="px-2 py-1 text-purple-800 font-light tracking-wider bg-white hover:bg-gray-100 rounded">
-                Entrar
-              </button>
-            </Link>
-            <Link to="/cadastrar" className="hover:underline">
-              <button className="px-2 py-1 text-purple-800 font-light tracking-wider bg-white hover:bg-gray-100 rounded">
-                Cadastrar
-              </button>
-            </Link>
+          <div className="p-2 m-2">
+            <div className="flex gap-5 justify-center items-center">
+              <Link to="/logar" className="hover:underline">
+                <button className="text-sm px-2 py-2 text-purple-800 font-light tracking-wider bg-white hover:bg-gray-100 rounded">
+                  Entrar
+                </button>
+              </Link>
+              <Link to="/cadastrar" className="hover:underline">
+                <button className="text-sm px-2 py-2 text-purple-800 font-light tracking-wider bg-white hover:bg-gray-100 rounded">
+                  Cadastrar
+                </button>
+              </Link>
+            </div>
           </div>
         </div>
       </nav>
