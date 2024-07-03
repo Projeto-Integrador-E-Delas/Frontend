@@ -11,7 +11,7 @@ function CardServicoSemLogin({ post }: CardServicoProps) {
     <div className="rounded-lg transform transition duration-300">
       <figure className="mb-2">
         <div
-          className="bg-auto h-40 rounded-md bg-no-repeat bg-center relative"
+          className="bg-auto h-40 rounded-lg bg-no-repeat bg-center relative"
           style={{
             background: `url('${post.foto}') center center`,
             backgroundRepeat: "no-repeat",

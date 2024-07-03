@@ -36,32 +36,32 @@ function Navbar() {
           <div className="text-base flex gap-6 justify-center items-center">
             <Link
               to="/sobre"
-              className="text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-gray-300 md:p-0 dark:text-white md:dark:hover:text-purple-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparen"
+              className="text-white rounded-lg hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-gray-300 md:p-0 dark:text-white md:dark:hover:text-purple-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparen"
             >
               Sobre nós
             </Link>
 
             <Link
               to="/servicos"
-              className="text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-gray-300 md:p-0 dark:text-white md:dark:hover:text-purple-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparen"
+              className="text-white rounded-lg hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-gray-300 md:p-0 dark:text-white md:dark:hover:text-purple-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparen"
             >
               Serviços
             </Link>
             <Link
               to="/cadastrarServico"
-              className="text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-gray-300 md:p-0 dark:text-white md:dark:hover:text-purple-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparen"
+              className="text-white rounded-lg hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-gray-300 md:p-0 dark:text-white md:dark:hover:text-purple-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparen"
             >
               Cadastrar serviços
             </Link>
             <Link
               to="/categorias"
-              className="text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-gray-300 md:p-0 dark:text-white md:dark:hover:text-purple-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparen"
+              className="text-white rounded-lg hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-gray-300 md:p-0 dark:text-white md:dark:hover:text-purple-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparen"
             >
               Categoria
             </Link>
             <Link
               to="/cadastrarCategoria"
-              className="text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-gray-300 md:p-0 dark:text-white md:dark:hover:text-purple-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparen"
+              className="text-white rounded-lg hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-gray-300 md:p-0 dark:text-white md:dark:hover:text-purple-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparen"
             >
               Cadastrar categoria
             </Link>
@@ -95,20 +95,20 @@ function Navbar() {
             </Link>
             <Link
               to="/"
-              className="text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-gray-300 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparen"
+              className="text-white rounded-lg hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-gray-300 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparen"
             >
               Inicio
             </Link>
             <Link
               to="/sobre"
-              className="text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-gray-300 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparen"
+              className="text-white rounded-lg hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-gray-300 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparen"
             >
               Sobre nós
             </Link>
 
             <Link
               to="/servicos"
-              className=" text-white rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-gray-300 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent has-submenu"
+              className=" text-white rounded-lg hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-gray-300 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent has-submenu"
             >
               Serviços
             </Link>
@@ -117,12 +117,12 @@ function Navbar() {
           <div className="p-2 m-2">
             <div className="flex gap-5 justify-center items-center">
               <Link to="/logar" className="hover:underline">
-                <button className="text-sm px-2 py-2 text-purple-800 font-light tracking-wider bg-white hover:bg-gray-100 rounded">
+                <button className="text-sm px-2 py-2 text-purple-800 font-light tracking-wider bg-white hover:bg-gray-100 rounded-lg">
                   Entrar
                 </button>
               </Link>
               <Link to="/cadastrar" className="hover:underline">
-                <button className="text-sm px-2 py-2 text-purple-800 font-light tracking-wider bg-white hover:bg-gray-100 rounded">
+                <button className="text-sm px-2 py-2 text-purple-800 font-light tracking-wider bg-white hover:bg-gray-100 rounded-lg">
                   Cadastrar
                 </button>
               </Link>

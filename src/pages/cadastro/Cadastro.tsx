@@ -78,7 +78,7 @@ function Cadastro() {
         <div className="fundoCadastro hidden lg:block" ></div>
 
         <form
-          className="my-20 flex justify-center flex-col w-2/3 gap-3 m-auto bg-white bg-opacity-50 rounded shadow-2xl p-12"
+          className="my-20 flex justify-center flex-col w-2/3 gap-3 m-auto bg-white bg-opacity-50 rounded-lg shadow-2xl p-12"
           onSubmit={cadastrarNovoUsuario} // onSubmit é o evento que dispara a função de cadastro quando o usuário clica em cadastrar
         >
           <h2 className="mb-4 font-medium text-center text-3xl">Cadastrar</h2>
@@ -165,7 +165,7 @@ function Cadastro() {
             />
           </div>
 
-          <div className="mb-3 flex flex-col w-full">
+          <div className="flex flex-col w-full">
             <label htmlFor="confirmarSenha">Confirmar senha</label>
             <input
               type="password"
@@ -186,9 +186,9 @@ function Cadastro() {
             />
           </div>
 
-          <div className="flex justify-around w-full gap-8">
+          <div className="mt-6 flex justify-around w-full gap-8">
             <button
-              className="rounded text-white font-light tracking-wider
+              className="rounded-lg text-white font-light tracking-wider
                 bg-red-600 hover:bg-red-500
                 disabled:bg-gray-300 w-1/2 
              py-2 flex justify-center"
@@ -198,7 +198,7 @@ function Cadastro() {
             </button>
 
             <button
-              className="rounded text-white font-light tracking-wider
+              className="rounded-lg text-white font-light tracking-wider
                 bg-purple-600 hover:bg-purple-500
                 disabled:bg-gray-300 w-1/2 
              py-2 flex justify-center"

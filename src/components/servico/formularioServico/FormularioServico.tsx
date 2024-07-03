@@ -148,7 +148,7 @@ function FormularioServico() {
       className="container flex flex-col mx-auto items-center bg-white rounded-lg p-10 shadow-custom"
       style={{ backgroundImage: `url(${Background})`, backgroundSize: "cover" }}
     >
-      <div className="flex justify-center flex-col w-2/5 gap-3 m-auto bg-white rounded shadow-2xl p-6 ">
+      <div className="flex justify-center flex-col w-2/5 gap-3 m-auto bg-white rounded-lg shadow-2xl p-6 ">
         <h1 className="text-2xl font-semibold text-center my-4">
           {id !== undefined ? "Editar Serviço" : "Cadastre seu serviço"}
         </h1>

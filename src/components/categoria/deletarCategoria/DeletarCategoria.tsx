@@ -4,6 +4,8 @@ import { AuthContext } from '../../../contexts/AuthContext'
 import { buscar, deletar } from '../../../services/Service'
 import { toastAlerta } from '../../../utils/toastAlerta'
 import Categorias from '../../../models/Categorias'
+import { Link } from 'react-router-dom'
+import Background from "../../../assets/backgorundCadastro.png";
 
 function DeletarCategoria() {
     const [categoria, setCategoria] = useState<Categorias>({} as Categorias)
@@ -64,22 +66,34 @@ function DeletarCategoria() {
         retornar()
     }
     return (
-        <div className='container w-1/3 mx-auto'>
-            <h1 className='text-4xl text-center my-4'>Deletar categoria</h1>
-
-            <p className='text-center font-semibold mb-4'>Você tem certeza de que deseja apagar o Categoria a seguir?</p>
-
-            <div className='border flex flex-col rounded-2xl overflow-hidden justify-between'>
-                <header className='py-2 px-6 bg-indigo-600 text-white font-bold text-2xl'>Categoria</header>
-                <p className='p-8 text-3xl bg-slate-200 h-full'>{categoria.nome}</p>
-                <div className="flex">
-                    <button className='text-slate-100 bg-red-600 hover:bg-red-400 w-full py-2' onClick={retornar}>Não</button>
-                    <button className='w-full text-white font-light tracking-wider bg-purple-800 hover:bg-purple-600 flex items-center justify-center' onClick={deletarTema}>
-                        Sim
-                    </button>
-                </div>
-            </div>
+        <div
+      className="container flex flex-col mx-auto items-center bg-white rounded-lg p-10 shadow-custom"
+      style={{ backgroundImage: `url(${Background})`, backgroundSize: "cover" }}
+    >
+      <div className="flex justify-center flex-col w-2/5 gap-3 m-auto bg-white rounded-lg shadow-2xl p-6 ">
+        <h1 className="text-2xl font-semibold text-center my-4">
+          Tem certeza de que deseja apagar a categoria para sempre?
+        </h1>
+        <p className="text-xl font-semibold h-full">{categoria.nome}</p>
+        <div className="mt-4 flex gap-2 w-full">
+          <Link className="w-full" to="/servicos">
+          <button
+              type="button"
+              className="text-white justify-center w-full gap-2 bg-purple-600 hover:bg-purple-700 focus:ring-4 focus:outline-none focus:ring-purple-300  font-medium rounded-lg text-sm px-6 py-2.5 text-center inline-flex items-center"
+            >
+              Não
+            </button>
+          </Link>
+          <button
+              onClick={deletarTema}
+              type="button"
+              className="text-white justify-center w-full gap-2 bg-red-600 hover:bg-red-700 focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-lg text-sm px-6 py-2.5 text-center inline-flex items-center"
+            >
+              Sim
+            </button>
         </div>
+      </div>
+    </div>
     )
 }
 
