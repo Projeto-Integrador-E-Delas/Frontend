@@ -24,6 +24,7 @@ function FormularioServico() {
   });
 
   const [servico, setServico] = useState<Servicos>({
+    login:"",
     id: 0,
     nome: "",
     agendamento: "",
