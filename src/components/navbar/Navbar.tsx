@@ -63,7 +63,7 @@ function Navbar() {
               to="/cadastrarCategoria"
               className="text-white rounded-lg hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-gray-300 md:p-0 dark:text-white md:dark:hover:text-purple-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparen"
             >
-              Cadastrar categoria
+              Cadastrar sua categoria
             </Link>
           </div>
 

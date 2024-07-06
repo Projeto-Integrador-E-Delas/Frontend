@@ -139,7 +139,7 @@ function FormularioCategoria() {
               onChange={(e: ChangeEvent<HTMLInputElement>) => atualizarEstado(e)}
               type="text"
               placeholder="Insira a URL"
-              name="nome"
+              name="Icone"
               required
               className="border-2
                   hover:border-purple-500
