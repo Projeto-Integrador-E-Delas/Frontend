@@ -40,7 +40,6 @@ function CardServico({ post }: CardServicoProps) {
             />
           </div>
         </div>
-        {/* <img src={post.foto} alt="" className="h-64 w-full rounded-lg bg-cover" /> */}
       </figure>
       <div className="rounded-lg flex flex-col gap-1">
         <h5 className="text-xl text-purple-700 font-bold line-clamp-1">

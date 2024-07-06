@@ -18,7 +18,6 @@ function CardCategoria({ categoria }: CardCategoriaProps) {
             backgroundSize: "contain",
           }}
         ></div>
-        {/* <img src={post.foto} alt="" className="h-64 w-full rounded-lg bg-cover" /> */}
       </figure>
       <div className="w-full rounded-lg flex flex-col gap-4">
         <h5 className="text-xl text-center text-purple-700 font-bold line-clamp-1">
