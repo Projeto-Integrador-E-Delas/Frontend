@@ -3,7 +3,6 @@ import "./Home.css";
 import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
 import { RxDotFilled } from "react-icons/rx";
 import Servicos from "../../models/Servicos";
-import { useNavigate } from "react-router-dom";
 import { toastAlerta } from "../../utils/toastAlerta";
 import { buscar } from "../../services/Service";
 import { AuthContext } from "../../contexts/AuthContext";
@@ -88,11 +87,11 @@ function Home() {
           className="w-full h-full bg-center bg-cover duration-500"
         ></div>
 
-        <div className="absolute top-[50%] -translate-x-0 translate-y-[-50%] left-32 text-2xl rounded-full p-2 bg-purple-600 text-white cursor-pointer">
+        <div className="absolute top-[50%] -translate-x-0 translate-y-[-50%] left-4 text-2xl rounded-full p-2 bg-purple-600 text-white cursor-pointer">
           <BsChevronCompactLeft onClick={prevSlide} size={30} />
         </div>
 
-        <div className="absolute top-[50%] -translate-x-0 translate-y-[-50%] right-32 text-2xl rounded-full p-2 bg-purple-600 text-white cursor-pointer">
+        <div className="absolute top-[50%] -translate-x-0 translate-y-[-50%] right-4 text-2xl rounded-full p-2 bg-purple-600 text-white cursor-pointer">
           <BsChevronCompactRight onClick={nextSlide} size={30} />
         </div>
 
