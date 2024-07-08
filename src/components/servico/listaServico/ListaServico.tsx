@@ -49,7 +49,7 @@ function ListaServico() {
     );
   } else {
     cardComponent = (
-      <div className="flex flex-col gap-10">
+      <div className="mt-8 flex flex-col gap-10">
         {servico.length > 0 && (
           <h1 className="font-semibold text-xl">
             {servico.length} Serviços disponíveis
@@ -78,7 +78,7 @@ function ListaServico() {
       >
         <ServiceSkeletons isVisible={showSkeletons} />
         <div
-          className="container mx-auto py-10 px-20"
+          className="container mx-auto py-10 px-4 md:px-20"
         >
           {cardComponent}
         </div>

@@ -74,14 +74,13 @@ function Cadastro() {
   return (
     <>
     <div style={{ backgroundImage: `url(${Background})`, backgroundSize: 'cover' }}>
-      <div className="flex w-1/2 max-w-2xl mx-auto place-items-center leading-loose " >
+      <div className="flex w-full justify-center py-10 mx-auto place-items-center leading-loose">
         <div className="fundoCadastro hidden lg:block" ></div>
-
         <form
-          className="my-20 flex justify-center flex-col w-2/3 gap-3 m-auto bg-white bg-opacity-50 rounded-lg shadow-2xl p-12"
+          className="w-full mx-4 lg:w-[800px] flex bg-white flex-col gap-4 max-w-lg p-10 rounded-lg shadow-2xl"
           onSubmit={cadastrarNovoUsuario} // onSubmit é o evento que dispara a função de cadastro quando o usuário clica em cadastrar
         >
-          <h2 className="mb-4 font-medium text-center text-3xl">Cadastrar</h2>
+          <h2 className="font-bold text-3xl">Cadastrar</h2>
           <div className="mb-3 flex flex-col w-full">
             <label htmlFor="nome">Nome</label>
             <input

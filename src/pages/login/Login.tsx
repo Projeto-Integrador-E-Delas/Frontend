@@ -36,17 +36,17 @@ function Login() {
     }, [])
 
   return (
-    <div className="p-14 w-full container mx-auto flex items-center justify-center">
-      <div className="flex items-center justify-between gap-20 flex-wrap lg:flex-nowrap w-full">
+    <div className="md:p-14 w-full container md:mx-auto flex items-center justify-center">
+      <div className="flex items-center justify-between gap-20 lg:flex-nowrap w-full">
         <div className="justify-center hidden lg:flex">
           <img src={loginImage} className="w-2/3" alt="Sample image" />
         </div>
         <form
-            className="w-full lg:w-[800px] flex flex-col gap-4 max-w-lg p-10 rounded-lg shadow-2xl"
+            className="mt-6 md:mt-auto w-full mx-4 lg:w-[800px] flex bg-white flex-col gap-4 max-w-lg p-10 rounded-lg shadow-2xl"
             onSubmit={login}
           >
             <p className="font-bold text-3xl">Olá novamente! 😄</p>
-            <div className="flex gap-3">
+            <div className="flex flex-wrap gap-3">
               <p className="text-gray-500">Ainda não tem uma conta? </p>
               <Link
                 to="/cadastrar"
