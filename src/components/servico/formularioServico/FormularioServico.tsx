@@ -184,9 +184,9 @@ function FormularioServico() {
               }
               type="text"
               placeholder="+55 (00) 00000-0000"
-              name="Insira seu telefone"
+              name="agendamento"
               required
-              className=" border-2
+              className="border-2
                   hover:border-purple-500
                   focus:border-purple-600
                   border-gray-500
