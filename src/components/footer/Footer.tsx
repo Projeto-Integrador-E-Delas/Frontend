@@ -50,12 +50,12 @@ function Footer() {
   return (
 
     
-    <footer className="flex flex-col font-poppins items-center bg-gradient-to-r from-purple-900 via-purple-600 to-purple-400 text-white text-center text-surface dark:bg-neutral-700 dark:text-white">
+    <footer className=" flex flex-col font-poppins items-center bg-gradient-to-r from-purple-900 via-purple-600 to-purple-400 text-white text-center text-surface dark:bg-neutral-700 dark:text-white">
       <div className="flex flex-col items-center gap-8 w-full p-4 bg-purple-700 ">
   <span className="text-xl font-bold text-white w-full">Quem somos?</span> 
-  <div className="flex gap-16 w-full h-29 justify-center ">
+  <div className="flex flex-wrap gap-8 w-full justify-center ">
     {participantes.map((participante) => (
-      <div key={participante.nome} className="w-48 flex flex-col items-center text-white">
+      <div key={participante.nome} className=" flex flex-col items-center text-white">
         <a href={participante.site}
           className="w-24 h-24 rounded-full bg-cover bg-center transform hover: transition duration-500 hover:scale-125"
           style={{ backgroundImage: `url(${participante.foto})` }}

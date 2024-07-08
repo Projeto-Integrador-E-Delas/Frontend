@@ -15,9 +15,7 @@ function ListaServico() {
 
   const buscarServico = useCallback(async () => {
     try {
-      setTimeout(async () => {
-        await buscar("/servico", setServico, {});
-      }, 2000);
+      await buscar("/servico", setServico, {});
     } catch (error: any) {
       if (error.toString().includes("403")) {
         toastAlerta("O token expirou, favor logar novamente", "info");
