@@ -103,15 +103,11 @@ function FormularioCategoria() {
 
   return (
     <div
-      className="container flex flex-col mx-auto items-center bg-white rounded-lg p-10 shadow-custom"
+      className="flex w-full justify-center py-10 mx-auto place-items-center leading-loose"
       style={{ backgroundImage: `url(${Background})`, backgroundSize: "cover" }}
     >
-      <div className="flex justify-center flex-col w-2/5 gap-3 m-auto bg-white rounded-lg shadow-2xl p-6 ">
-        <h1 className="text-2xl font-semibold text-center my-4">
-          {id !== undefined ? "Editar categoria" : "Cadastrar categoria"}
-        </h1>
-
-      <form className="flex flex-col items-center" onSubmit={gerarNovaCategoria}>
+      <form className="w-full mx-4 lg:w-[800px] flex bg-white flex-col gap-4 max-w-lg p-10 rounded-lg shadow-2xl" onSubmit={gerarNovaCategoria}>
+          <h2 className="font-bold text-3xl">{id !== undefined ? "Editar categoria" : "Cadastrar categoria"}</h2>
           <div className="w-full flex flex-col gap-2">
             <label htmlFor="titulo">Nome da categoria</label>
             <input
@@ -166,7 +162,6 @@ function FormularioCategoria() {
           {id === undefined ? 'Cadastrar' : 'Editar'}
         </button>
       </form>
-    </div>
     </div>
   );
 }

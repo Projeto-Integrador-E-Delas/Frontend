@@ -48,9 +48,6 @@ function Navbar() {
             </Link>
           </div>
           <div className="hidden md:flex text-base gap-6 justify-center items-center">
-            <Link to="/sobre" className="text-white hover:text-gray-300">
-              Sobre nós
-            </Link>
             <Link to="/servicos" className="text-white hover:text-gray-300">
               Serviços
             </Link>
@@ -58,8 +55,12 @@ function Navbar() {
               to="/cadastrarServico"
               className="text-white hover:text-gray-300"
             >
-              Cadastrar serviços
+              Cadastrar meu serviço
             </Link>
+            <Link to="/sobre" className="text-white hover:text-gray-300">
+              Sobre nós
+            </Link>
+            {/* 
             <Link to="/categorias" className="text-white hover:text-gray-300">
               Categoria
             </Link>
@@ -68,7 +69,7 @@ function Navbar() {
               className="text-white hover:text-gray-300"
             >
               Cadastrar sua categoria
-            </Link>
+            </Link> */}
           </div>
           <div className="hidden md:flex gap-6 justify-end items-center">
             <Link
@@ -94,13 +95,6 @@ function Navbar() {
             </div>
             <div className="flex flex-col p-4 gap-2">
               <Link
-                to="/sobre"
-                className="text-white py-2"
-                onClick={toggleMenu}
-              >
-                Sobre nós
-              </Link>
-              <Link
                 to="/servicos"
                 className="text-white py-2"
                 onClick={toggleMenu}
@@ -112,9 +106,16 @@ function Navbar() {
                 className="text-white py-2"
                 onClick={toggleMenu}
               >
-                Cadastrar serviços
+                Cadastrar meu serviço
               </Link>
               <Link
+                to="/sobre"
+                className="text-white py-2"
+                onClick={toggleMenu}
+              >
+                Sobre nós
+              </Link>
+              {/* <Link
                 to="/categorias"
                 className="text-white py-2"
                 onClick={toggleMenu}
@@ -127,7 +128,7 @@ function Navbar() {
                 onClick={toggleMenu}
               >
                 Cadastrar sua categoria
-              </Link>
+              </Link> */}
               <Link
                 to=""
                 onClick={() => {

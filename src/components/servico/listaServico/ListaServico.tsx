@@ -26,7 +26,7 @@ function ListaServico() {
 
   useEffect(() => {
     buscarServico();
-  }, [servico, buscarServico]);
+  }, [buscarServico]);
 
   const showSkeletons = servico.length === 0;
 

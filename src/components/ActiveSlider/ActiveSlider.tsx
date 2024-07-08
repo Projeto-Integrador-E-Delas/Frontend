@@ -36,7 +36,7 @@ const ActiveSlider = () => {
       className='max-w-[90%] lg:max-w-[80%]'
       >
         {ServiceData.map((item: any) => (
-            <SwiperSlide key = {item.backgroundImage}>
+            <SwiperSlide key={item.backgroundImage}>
                 <div className="flex flex-col gap-6 mb-20 group relative shadow-lg m-auto text-white rounded-lg px-6 py-8 h-[250px] w-[215px] lg:h-[400px] lg:w-[350px]">
                     <div className="absolute inset-0 bg-cover bg-center" style={{backgroundImage: `url(${item.backgroundImage})`}}/>
                 </div>

@@ -99,7 +99,7 @@ function Home() {
         <div className="flex top-4 justify-center mt-2">
           {slides.map((slide, slideIndex) => (
             <div
-              key={slideIndex}
+              key={`${slide.url}-${slideIndex}`}
               onClick={() => goToSlide(slideIndex)}
               className="text-4xl cursor-pointer "
             >

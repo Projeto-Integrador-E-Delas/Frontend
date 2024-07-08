@@ -54,8 +54,8 @@ function Footer() {
       <div className="flex flex-col items-center gap-8 w-full p-4 bg-purple-700 ">
   <span className="text-xl font-bold text-white w-full">Quem somos?</span> 
   <div className="flex flex-wrap gap-8 w-full justify-center ">
-    {participantes.map((participante) => (
-      <div key={participante.nome} className=" flex flex-col items-center text-white">
+    {participantes.map((participante, index) => (
+      <div key={`${participante.nome}-${index}`} className=" flex flex-col items-center text-white">
         <a href={participante.site}
           className="w-24 h-24 rounded-full bg-cover bg-center transform hover: transition duration-500 hover:scale-125"
           style={{ backgroundImage: `url(${participante.foto})` }}

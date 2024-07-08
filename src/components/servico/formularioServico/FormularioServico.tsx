@@ -145,18 +145,14 @@ function FormularioServico() {
 
   return (
     <div
-      className="container flex flex-col mx-auto items-center bg-white rounded-lg p-10 shadow-custom"
+      className="flex w-full justify-center py-10 mx-auto place-items-center leading-loose"
       style={{ backgroundImage: `url(${Background})`, backgroundSize: "cover" }}
     >
-      <div className="flex justify-center flex-col w-2/5 gap-3 m-auto bg-white rounded-lg shadow-2xl p-6 ">
-        <h1 className="text-2xl font-semibold text-center my-4">
-          {id !== undefined ? "Editar Serviço" : "Cadastre seu serviço"}
-        </h1>
-
-        <form
+      <form
           onSubmit={gerarNovoServico}
-          className="flex-col gap-6 items-center"
+          className="w-full mx-4 lg:w-[800px] flex bg-white flex-col gap-4 max-w-lg p-10 rounded-lg shadow-2xl"
         >
+        <h2 className="font-bold text-3xl">{id !== undefined ? "Editar Serviço" : "Cadastre seu serviço"}</h2>
           <div className="flex flex-col gap-2">
             <label htmlFor="titulo">Nome do serviço</label>
             <input
@@ -287,7 +283,7 @@ function FormularioServico() {
                 Selecione um categoria
               </option>
               {categorias.map((categoria) => (
-                <option value={categoria.id}>{categoria.nome}</option>
+                <option key={categoria.id} value={categoria.id}>{categoria.nome}</option>
               ))}
             </select>
           </div>
@@ -311,7 +307,6 @@ function FormularioServico() {
             )}
           </button>
         </form>
-      </div>
     </div>
   );
 }
